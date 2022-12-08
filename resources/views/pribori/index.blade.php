@@ -71,7 +71,7 @@
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
-              <td><a href="">{{$pribor->Where->Verifier->name}}</a></td>
+              <td><a href="{{route('WhereIndex', $pribor->Where->Verifier->VID)}}">{{$pribor->Where->Verifier->name}}</a></td>
               <td>{{ $pribor->currentDate}}</td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
