@@ -4,19 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Where;
 use App\Models\Pribori;
-
-class Verifier extends Model
+class StatusDevice extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
 
-    protected $primaryKey = 'VID';
-
-    public function Device(){
+    public function Pribori(){
         return $this->hasMany(Pribori::class, 'PriborID');
-    }
-    public function Where(){
-        return $this->belongsTo(Where::class, 'WID');
     }
 }

@@ -1,18 +1,19 @@
 @extends('layout')
 @section('content')
-
+@include('errors.validErrors')
 <form class="row g-3" action = "{{route('AddPribor')}}" method = "POST">
     {{csrf_field()}}
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Название прибора</label>
-    <input type="text" name="name" class="form-control" id="inputEmail4">
+    <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Заводской номер прибора</label>
-    <input type="text" name="number" class="form-control" id="inputPassword4">
+    <input type="text" name="number" value="{{ old('number') }}" class="form-control" id="inputPassword4">
   </div>
   <div class="col-md-6">
-<select name = "object" >
+  <label for="object" class="form-label">Выберите организацию, чей прибор</label>
+<select id="object" name = "object" value="{{ old('object') }}">
 <option  value="">Выберите...</option>
     @foreach ($objects as $obj)
   <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
@@ -21,20 +22,21 @@
   </div>
   <div class="col-md-6">
     <label for="inputAddress2" class="form-label">Дата текущей поверки</label>
-    <input type="date" name="currentDate" class="form-control" id="inputAddress2">
+    <input type="date" name="currentDate" value="{{ old('currentDate') }}" class="form-control" id="inputAddress2">
   </div>
 
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Дата следующей поверки</label>
-    <input type="date" name="nextDate" class="form-control" id="inputCity" placeholder="Дата в формате гггг-мм-дд">
+    <input type="date" name="nextDate" value="{{ old('nextDate') }}" class="form-control" id="inputCity" placeholder="Дата в формате гггг-мм-дд">
   </div>
 
   <div class="col-md-12">
-  <select id="filters" name = "WID"  >
-                              <option  value="">Выберите...</option>
-                                    @foreach ($pribori as $pribor)
-                                <option  value="{{$pribor->WID}}">{{$pribor->Where->Verifier->name}}</option>
-                                    @endforeach
+  <label for="verifiers" class="form-label">Выберите где сейчас прибор</label>
+  <select id="verifiers" name = "id" >
+                              <option  value="">Выберите...</option>    
+                              @foreach($statusDevises as $statusDevice)
+                                <option  value="{{$statusDevice->id}}"{{ $statusDevice->id == old('id') ? ' selected' : '' }}>{{$statusDevice->status}}</option>   
+                                @endforeach  
                               </select>
   </div>
 

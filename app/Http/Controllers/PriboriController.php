@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Objects;
 use App\Models\Pribori;
+use App\Models\StatusDevice;
+use App\Models\Verifier;
 use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class PriboriController extends Controller
 {
@@ -18,12 +21,34 @@ class PriboriController extends Controller
     public function create(){
         $objects = Objects::all();
         $pribori = Pribori::all();
-        return view('pribori.create', ['objects' => $objects, 'pribori' =>$pribori]);
+        $verifiers = Verifier::all();
+        $statusDevises = StatusDevice::all();
+        return view('pribori.create', ['objects' => $objects, 'pribori' =>$pribori, 'verifiers' => $verifiers, 'statusDevises' => $statusDevises]);
     }
     public function store(Request $request){
+        Validator::make($request->all(),[
+            'name' => 'required',
+            'number'=>'required|',
+            'object' => 'required',
+            'id' => 'required',
+            'currentDate' =>'required|',
+            'nextDate' => 'required|'
+        ],
+        [
+            'name.required' => 'Заполните название!',
+            'number.required' => 'Заполните номер!',
+            'object.required' => 'Выеберите чей прибор!',
+            'id.required' => 'Укажите где он сейчас!',
+            'currentDate.required' => 'Заполните Дату текущей поверки!',
+            'nextDate.required' => 'Заполните Дату следующей поверки!',
+        ])->validate();
+
         $device = Pribori::add($request->all());
         $device->GetObjectId($request->get('object'));
-        return redirect()->route('PriboriIndex');
+        DB::table('wheres')->insert(
+            ['PriborID' => $device->PriborID]
+          );
+        return redirect()->route('PriboriIndex')->with('messageOK', 'Прибор добавлен!');
     }
     public function edit($Id){
         $objects = Objects::all();

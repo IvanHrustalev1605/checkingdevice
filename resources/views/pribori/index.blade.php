@@ -48,6 +48,11 @@
   {{session('message')}}
 </div>
 @endif
+@if (session('messageOK'))
+   <div class="alert alert-info" role="alert">
+  {{session('messageOK')}}
+</div>
+@endif
 <div class="container">
       <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -71,7 +76,9 @@
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
-              <td><a href="{{route('WhereIndex', $pribor->Where->Verifier->VID)}}">{{$pribor->Where->Verifier->name}}</a></td>
+
+              <td><a href="{{route('WhereIndex', $pribor->PriborID)}}">{{$pribor->StatusDevice->status}}<p class = "moreInfo">(подробнее)</p></a></td>
+
               <td>{{ $pribor->currentDate}}</td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
@@ -83,8 +90,14 @@
                           </td>
             </tr>
             @endforeach
+
           </tbody>
         </table>
       </div>
 </div>
+@if (session('sortAlert'))
+   <div class="alert alert-info" role="alert">
+  {{session('sortAlert')}}
+</div>
+@endif
 @endsection

@@ -1,10 +1,15 @@
 @extends('layout')
 @section('content')
-<form class="row g-3" action = "{{route('UpdateDeviceLocation', $w->WID)}}" method = "post">
+<form class="row g-3" action = "{{route('UpdateDeviceLocation', $w->PriborID)}}" method = "post">
     {{csrf_field()}}
   <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Где находится</label>
-    <input type="text" name="where" value="{{$w->where}}" class="form-control" id="inputPassword4">
+    <label for="verifiers" class="form-label">Где находится</label>
+    <select id="verifiers" name = "VID"  >
+                              <option  value="">Выберите...</option>    
+                              @foreach($verifiers as $verifier)
+                                <option  value="{{$verifier->VID}}">{{$verifier->name}}</option>   
+                                @endforeach  
+                              </select>
   </div>
   <div class="col-md-6">
     <label for="inputAddress2" class="form-label">Когда отвезен</label>

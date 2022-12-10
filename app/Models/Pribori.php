@@ -25,7 +25,8 @@ class Pribori extends Model
                            'number',
                            'currentDate',
                            'nextDate',
-                           'comments' ];
+                           'comments',
+                             'id'];
 
     public function Objects(){
         return $this->belongsTo(Objects::class, 'ObjID');
@@ -36,7 +37,9 @@ class Pribori extends Model
     public function Verifier(){
         return $this->belongsTo(Verifier::class, 'VID');
     }
- 
+    public function StatusDevice(){
+        return $this->belongsTo(StatusDevice::class, 'id');
+    }
     public static function add($fields){
             $pribor = new static;
             $pribor->fill($fields);

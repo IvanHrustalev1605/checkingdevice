@@ -11,11 +11,11 @@ class Where extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'WID';
+    protected $primaryKey = 'PriborID';
     
    protected $fillable = [
-        'where',
-        'status',
+
+        'VID',
         'delivered',
         'takenAway'
     ];
@@ -36,5 +36,6 @@ class Where extends Model
         $newDateFormat = Carbon::parse($value)->format('d-m-Y');
         return $newDateFormat;
     }
+
 
 }
