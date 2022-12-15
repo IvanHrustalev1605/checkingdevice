@@ -1,0 +1,182 @@
+
+.heading {
+  color: #fff;
+  text-align: center;
+}
+.heading h1 {
+  margin-bottom: 3rem;
+  font-weight: 300;
+  position: relative;
+}
+.heading h1:after {
+  content: '';
+  height: 2px;
+  width: 2rem;
+  position: absolute;
+  left: 50%;
+  bottom: -1rem;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+.dashboard {
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+.dashboard .nav {
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 -3rem 2rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+.dashboard .nav:before,
+.dashboard .nav:after {
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  border: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid #f2f0f0;
+  transform-origin: center;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  z-index: -1;
+}
+.dashboard .nav:before {
+  left: 0;
+  transform: translateY(-0.45rem) rotate(135deg) translateX(-0 2rem);
+}
+.dashboard .nav:after {
+  right: 0;
+  transform: translateY(-0.45rem) rotate(-135deg) translateX(0 2rem);
+}
+.dashboard .nav a {
+  display: inline-block;
+  margin: 0 3rem;
+  font-size: 2rem;
+  color: #2980b9;
+  opacity: 0.7;
+  transition: 0.25s;
+}
+.dashboard .nav a:hover {
+  opacity: 1;
+}
+.dashboard .list .num {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(0):before {
+  content: '0';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(1):before {
+  content: 'Адрес';
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(2):before {
+  content: 'ИНН';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(3):before {
+  content: 'КПП';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(4):before {
+  content: 'р/сч';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(5):before {
+  content: 'к/сч';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(6):before {
+  content: 'ОКПО';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(7):before {
+  content: 'ОГРН';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(8):before {
+  content: 'Телефон';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num:nth-child(9):before {
+  content: '9';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.dashboard .list .num h3 {
+  position: relative;
+  left: -1.5rem;
+  color: #3d3d3d;
+  font-size: 0.85rem;
+  transition: 0.25s;
+}
+.dashboard .list .num:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+.dashboard .list .num:hover:before {
+  opacity: 0.2;
+}
+.dashboard .list .num:hover h3 {
+  left: 3rem;
+}

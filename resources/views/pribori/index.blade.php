@@ -66,7 +66,9 @@
               <th>Поверен до</th>
               <th>Дата следующей поверки</th>
               <th>Коментарии</th>
+              <th>Кто вносил изменения</th>
               <th>Действия</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -77,11 +79,12 @@
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
 
-              <td><a href="{{route('WhereIndex', $pribor->PriborID)}}">{{$pribor->StatusDevice->status}}<p class = "moreInfo">(подробнее)</p></a></td>
+              <td>{{$pribor->StatusDevice->status}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
 
               <td>{{ $pribor->currentDate}}</td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
+              <td>{{$pribor->User->name}}</td>
               <td>
               <a class="bi bi-pencil-fill" href="{{route('EditPribor', $pribor->PriborID)}}"></a>
               {{Form::open(['route' => ['PriborDelete', $pribor->PriborID],

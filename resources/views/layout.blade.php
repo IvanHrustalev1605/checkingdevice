@@ -53,18 +53,19 @@
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/navMain.css">
     <link rel="stylesheet" href="/css/selectDivice.css">
+    <link rel="stylesheet" href="/css/mainLogo.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
     <link href="/css/examples/dashboard.css" rel="stylesheet"></head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/">ООО "ЭргоГазМонтаж</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Войти</a>
-    </li>
-  </ul>
+  <div class="navbar navbar-dark">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/">{{Auth::user()->name}}</a>
+      <a class="nav-link" href="{{route('logout')}}">Выйти</a>
+      </div>
+      <div class="navbar navbar-dark">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/"></a>
+      <a class="nav-link" href="{{route('EmloyeeLogin')}}">Войти</a>
+      </div>
 </nav>
 
 <div class="container-fluid">
@@ -73,9 +74,9 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('index')}}">
+            <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">
               <span data-feather="home"></span>
-              Главная
+               Личный кабинет организации
             </a>
           </li>
           <li class="nav-item">
@@ -110,19 +111,17 @@
       <div>
     @yield('content') 
     </div>
-    <footer class="footer">
+    </div>
+ 
+ </main>  
+ <footer class="footer">
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2022
     <a class="text-dark" href="https://ergogaz.ru/">ООО "ЭргоГазМонтаж</a>
   </div>
   <!-- Copyright -->
-</footer> 
- </main>    
-  </div>
-
-
-
+</footer>  
 </div>
 <script src="https://unpkg.com/@popperjs/core@2.0.0-rc.1"></script>
 <script>

@@ -17,12 +17,15 @@
           <tbody>
             @foreach($verifiers as $verifier)
             <tr>
+              @if($verifier->VID == 4)
+              @else
               <td>{{$verifier->VID}}</td>
               <td>{{$verifier->name}}</td>
               <td>{{$verifier->adress}}</td>
               <td>{{$verifier->phone}}</td>
               <td>{{$verifier->email}}</td>
             </tr>
+            @endif
             @endforeach
           </tbody>
         </table>
