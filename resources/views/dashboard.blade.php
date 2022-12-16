@@ -1,32 +1,29 @@
 @extends('layout')
 @section('content')
 
-    <h1>{{Auth::user()->name}}</h1>
+    <h1>{{Auth::user()->organisation->name}}</h1>
 <div class="dashboard">
   <div class="list">
     <div class="num">
-      <h3>{{Auth::user()->adress}}</h3>
+      <h3>{{Auth::user()->organisation->adress}}</h3>
     </div>
     <div class="num">
-      <h3>{{Auth::user()->INN}} </h3>
+      <h3>{{Auth::user()->organisation->INN}} </h3>
     </div>
     <div class="num">
-      <h3>{{Auth::user()->KPP}}</h3>
+      <h3>{{Auth::user()->organisation->RSCH}}</h3>
     </div>
     <div class="num">
-      <h3>{{Auth::user()->RSCH}}</h3>
+      <h3>{{Auth::user()->organisation->KSCH}}</h3>
     </div>
     <div class="num">
-      <h3>{{Auth::user()->KSCH}}</h3>
+      <h3>{{Auth::user()->organisation->OKPO}}</h3>
     </div>
     <div class="num">
-      <h3>{{Auth::user()->OKPO}}</h3>
+      <h3>{{Auth::user()->organisation->OGRN}}</h3>
     </div>
     <div class="num">
-      <h3>{{Auth::user()->OGRN}}</h3>
-    </div>
-    <div class="num">
-      <h3>{{Auth::user()->phone}}</h3>
+      <h3>{{Auth::user()->organisation->phone}}</h3>
     </div>
   </div>
 </div>

@@ -21,4 +21,5 @@ class Objects extends Model
     public function Where(){
         return $this->hasOne(Where::class, 'WID');
     }
+    
 }

@@ -17,7 +17,7 @@
           <tbody>
             <tr>
               <td>{{$w->Pribor->name}}</td>
-              @IF($w->Verifier->VID === 4)
+              @IF($w->Verifier->VID === 2)
               <td>Укажите...</td>
               @else
               <td>{{$w->Verifier->name}}

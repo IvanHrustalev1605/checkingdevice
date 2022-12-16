@@ -59,12 +59,8 @@
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class="navbar navbar-dark">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/">{{Auth::user()->name}}</a>
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/">{{Auth::user()->organisation->name}}</a>
       <a class="nav-link" href="{{route('logout')}}">Выйти</a>
-      </div>
-      <div class="navbar navbar-dark">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/"></a>
-      <a class="nav-link" href="{{route('EmloyeeLogin')}}">Войти</a>
       </div>
 </nav>
 

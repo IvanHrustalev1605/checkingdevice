@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-6">
   <label for="object" class="form-label">Выберите организацию, чей прибор</label>
-<select id="object" name = "object" value="{{ old('object') }}">
+<select id="object" name = "ObjID" value="{{ old('object') }}">
 <option  value="">Выберите...</option>
     @foreach ($objects as $obj)
   <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
@@ -32,10 +32,10 @@
 
   <div class="col-md-12">
   <label for="verifiers" class="form-label">Выберите где сейчас прибор</label>
-  <select id="verifiers" name = "id" >
+  <select id="verifiers" name = "VID" >
                               <option  value="">Выберите...</option>    
-                              @foreach($statusDevises as $statusDevice)
-                                <option  value="{{$statusDevice->id}}"{{ $statusDevice->id == old('id') ? ' selected' : '' }}>{{$statusDevice->status}}</option>   
+                              @foreach($verifiers as $verifier)
+                                <option  value="{{$verifier->VID}}">{{$verifier->name}}</option>   
                                 @endforeach  
                               </select>
   </div>

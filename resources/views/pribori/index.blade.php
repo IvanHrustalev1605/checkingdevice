@@ -79,12 +79,12 @@
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
 
-              <td>{{$pribor->StatusDevice->status}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
+              <td>{{$pribor->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
 
               <td>{{ $pribor->currentDate}}</td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
-              <td>{{$pribor->User->name}}</td>
+              <td>{{Auth::user()->email}}</td>
               <td>
               <a class="bi bi-pencil-fill" href="{{route('EditPribor', $pribor->PriborID)}}"></a>
               {{Form::open(['route' => ['PriborDelete', $pribor->PriborID],

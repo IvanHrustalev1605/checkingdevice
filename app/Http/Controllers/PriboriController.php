@@ -29,22 +29,21 @@ class PriboriController extends Controller
         Validator::make($request->all(),[
             'name' => 'required',
             'number'=>'required|',
-            'object' => 'required',
-            'id' => 'required',
+            'ObjID' => 'required',
+            'VID' => 'required',
             'currentDate' =>'required|',
             'nextDate' => 'required|'
         ],
         [
             'name.required' => 'Заполните название!',
             'number.required' => 'Заполните номер!',
-            'object.required' => 'Выеберите чей прибор!',
-            'id.required' => 'Укажите где он сейчас!',
+            'ObjID.required' => 'Выеберите чей прибор!',
+            'VID.required' => 'Укажите где он сейчас!',
             'currentDate.required' => 'Заполните Дату текущей поверки!',
             'nextDate.required' => 'Заполните Дату следующей поверки!',
         ])->validate();
 
         $device = Pribori::add($request->all());
-        $device->GetObjectId($request->get('object'));
         DB::table('wheres')->insert(
             ['PriborID' => $device->PriborID]
           );

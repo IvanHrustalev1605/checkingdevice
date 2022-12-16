@@ -81,8 +81,12 @@
                     <label class="form-label"  for="form2Example17">Email</label>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="text" id="form2Example17" name = "name" class="form-control form-control-lg" />
-                    <label class="form-label"  for="form2Example17">Название организации</label>
+                  <select class="form-select" name="orgid" aria-label="Default select example">
+                      <option selected>Название организации</option>
+                      @foreach($organisations as $org)
+                      <option value="{{$org->orgid}}">{{$org->name}}</option>
+                      @endforeach
+                    </select>
                   </div>
                   
                   <div class="form-outline mb-4">

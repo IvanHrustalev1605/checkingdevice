@@ -26,7 +26,8 @@ class Pribori extends Model
                            'currentDate',
                            'nextDate',
                            'comments',
-                             'id'];
+                             'VID',
+                            'ObjID'];
 
     public function Objects(){
         return $this->belongsTo(Objects::class, 'ObjID');
