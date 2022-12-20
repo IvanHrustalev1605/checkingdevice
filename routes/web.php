@@ -21,13 +21,14 @@ Route::POST('/reg', [regcontroller::class, 'add'])->name('addUser');
 Route::get('/registration', [regcontroller::class, 'index'])->name('indexReg');
 
 
-/*Route::group([
+Route::group([
     'middleware' => 'auth'
-], function(){*/
+], function(){
  // Только аутентифицированные пользователи могут получить доступ к этому маршруту ...
  Route::get('/logout', [mainauthcontroller::class, 'logout'])->name('logout');
  Route::get('/main', [DashBoardController::class, 'index'])->name('dashboard');
  Route::get('/main/edit{ID}', [DashBoardController::class, 'edit'])->name('dashboardEdit');
+ Route::POST('/main/edit{ID}', [DashBoardController::class, 'update'])->name('dashboardUpdate');
 
  Route::POST('/loginEmployee', [LoginController::class, 'loginEmployee'])->name('AuthEmployee');
  Route::get('/employee', [LoginController::class, 'indexEmployee'])->name('EmloyeeLogin');
@@ -58,7 +59,7 @@ Route::get('/registration', [regcontroller::class, 'index'])->name('indexReg');
      Route::post('/where/edit{ID}', [WhereController::class, 'update'])->name('UpdateDeviceLocation');
 
      Route::get('/verifier', [VerifierController::class, 'index'])->name('VerifierIndex');
-//});
+});
 
    
 

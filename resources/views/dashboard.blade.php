@@ -26,10 +26,11 @@
       <h3>{{Auth::user()->organisation->phone}}</h3>
     </div>
   </div>
-</div>
-<form method="GET" action="{{route('dashboardEdit', Auth::user()->uid)}}">
+  <form method="GET" action="{{route('dashboardEdit', Auth::user()->organisation->orgid)}}">
 <div class="col-12">
         <button type="submit" class="btn btn-primary">Редактировать</button>
     </div>
   </form>
+</div>
+
 @endsection

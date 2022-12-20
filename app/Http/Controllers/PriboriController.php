@@ -22,8 +22,7 @@ class PriboriController extends Controller
         $objects = Objects::all();
         $pribori = Pribori::all();
         $verifiers = Verifier::all();
-        $statusDevises = StatusDevice::all();
-        return view('pribori.create', ['objects' => $objects, 'pribori' =>$pribori, 'verifiers' => $verifiers, 'statusDevises' => $statusDevises]);
+        return view('pribori.create', ['objects' => $objects, 'pribori' =>$pribori, 'verifiers' => $verifiers]);
     }
     public function store(Request $request){
         Validator::make($request->all(),[
@@ -45,7 +44,8 @@ class PriboriController extends Controller
 
         $device = Pribori::add($request->all());
         DB::table('wheres')->insert(
-            ['PriborID' => $device->PriborID]
+            ['PriborID' => $device->PriborID,
+            'VID' => $device->VID]
           );
         return redirect()->route('PriboriIndex')->with('messageOK', 'Прибор добавлен!');
     }

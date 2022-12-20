@@ -98,9 +98,4 @@
         </table>
       </div>
 </div>
-@if (session('sortAlert'))
-   <div class="alert alert-info" role="alert">
-  {{session('sortAlert')}}
-</div>
-@endif
 @endsection

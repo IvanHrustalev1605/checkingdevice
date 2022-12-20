@@ -26,6 +26,7 @@
               @endif
               <td>{{$w->delivered}}</td>
               <td>{{$w->takenAway}}</td>    
+              <td>{{$w->status}}</td>
             </tr>
           </tbody>
         </table>
