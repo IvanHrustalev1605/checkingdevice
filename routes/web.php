@@ -59,6 +59,8 @@ Route::group([
      Route::post('/where/edit{ID}', [WhereController::class, 'update'])->name('UpdateDeviceLocation');
 
      Route::get('/verifier', [VerifierController::class, 'index'])->name('VerifierIndex');
+     Route::get('/verifier/create', [VerifierController::class, 'createForm'])->name('verifierCreateForm');
+     Route::POST('/verifier/create', [VerifierController::class, 'create'])->name('verifierCreate');
 });
 
    

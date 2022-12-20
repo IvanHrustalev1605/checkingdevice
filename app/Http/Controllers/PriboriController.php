@@ -52,7 +52,8 @@ class PriboriController extends Controller
     public function edit($Id){
         $objects = Objects::all();
         $pribor = Pribori::find($Id);
-        return view('pribori.edit', ['pribor' => $pribor, 'objects' => $objects]);
+        $verifiers = Verifier::all();
+        return view('pribori.edit', ['pribor' => $pribor, 'objects' => $objects, 'verifiers' => $verifiers]);
     }
     public function update(Request $request, $id){
         $pribor = Pribori::find($id);

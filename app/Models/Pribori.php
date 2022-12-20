@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use App\Filters\QueryFilter;
 use App\Models\Filters\Device\DeviceObjectSearch;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Objects;
-use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use App\Models\Where;
 use App\Models\Verifier;
@@ -33,7 +30,7 @@ class Pribori extends Model
         return $this->belongsTo(Objects::class, 'ObjID');
     }
     public function Where(){
-        return $this->belongsTo(Where::class, 'WID');
+        return $this->belongsTo(Where::class, 'PriborID');
     }
     public function Verifier(){
         return $this->belongsTo(Verifier::class, 'VID');

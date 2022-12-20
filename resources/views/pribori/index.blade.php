@@ -79,7 +79,7 @@
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
 
-              <td>{{$pribor->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
+              <td>{{$pribor->Where->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
 
               <td>{{ $pribor->currentDate}}</td> 
               <td>{{ $pribor->nextDate}}</td>

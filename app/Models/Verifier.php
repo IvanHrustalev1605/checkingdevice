@@ -17,6 +17,22 @@ class Verifier extends Model
         return $this->hasMany(Pribori::class, 'PriborID');
     }
     public function Where(){
-        return $this->belongsTo(Where::class, 'WID');
+        return $this->hasOne(Where::class, 'PriborID');
     }
+
+    protected $fillable = ['name',
+                            'adress',     
+                             'phone',
+                            'email'];
+
+    public static function add($fields){
+        $org = new static;
+        $org->fill($fields);
+        $org->save(); 
+        return $org;
+    }
+    public function edit($fields){
+        $this->fill($fields);
+        $this->save();
+}
 }
