@@ -1,0 +1,11 @@
+.reset-filters-parent{
+    display:flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: end;
+    
+}
+.reset-filters{
+    margin: 25px 0;
+}

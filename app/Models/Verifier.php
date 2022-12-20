@@ -16,9 +16,6 @@ class Verifier extends Model
     public function Device(){
         return $this->hasMany(Pribori::class, 'PriborID');
     }
-    public function Where(){
-        return $this->hasOne(Where::class, 'PriborID');
-    }
 
     protected $fillable = ['name',
                             'adress',     

@@ -23,10 +23,16 @@
                                 <input class="form-control form-control-sm" name = "Year" value="{{old('Year')}}"  type="text" >
                           </div>     
                                     <div class="col-6 col-sm-3">
-                                      <label  class="form-label">Дата от...</label>
+                                      <label  class="form-label">Дата следующей поверки от...</label>
                                       <input class="form-control form-control-sm" name = "SortDateUp"  type="text" >
-                                      <label  class="form-label">Дата до...</label>
+                                      <label  class="form-label">Дата следующей поверки до...</label>
                                       <input class="form-control form-control-sm" name = "SortDateTo"  type="text" >
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                      <label  class="form-label">Дата текущей поверки от...</label>
+                                      <input class="form-control form-control-sm" name = "SortCurrentDateUp"  type="text" >
+                                      <label  class="form-label">Дата текущей поверки до...</label>
+                                      <input class="form-control form-control-sm" name = "SortCurrentDateTo"  type="text" >
                                     </div>
                                     <div class="form-check">
                                       <input class="form-check-input" type="checkbox" name = "sortDESC" value="sortDESC" id="flexCheckDefault"  >
@@ -41,8 +47,16 @@
                                       </label>
                                     </div>
                       </div>
+                      <br>
                       <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
                       </form>
+                        <div class="reset-filters-parent">
+                          <div class="reset-filters">
+                              <form method="get" action="{{route('PriboriIndex')}}">
+                                 <button type="submit" class="btn btn-info btn-mini ">Сбросить все фильтры</button>
+                              </form>
+                          </div>
+                        </div>
    @if (session('message'))
    <div class="alert alert-info" role="alert">
   {{session('message')}}

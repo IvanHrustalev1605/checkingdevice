@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="/css/selectDivice.css">
     <link rel="stylesheet" href="/css/mainLogo.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link href="/css/examples/dashboard.css" rel="stylesheet"></head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
