@@ -48,7 +48,6 @@ class User extends Authenticatable
     public static function add($fields){
         $user = new static;
         $user->fill($fields);
-        $user->GeneratePassword('password');
         $user->save(); 
         return $user;
 }

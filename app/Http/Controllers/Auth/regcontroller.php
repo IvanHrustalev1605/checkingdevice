@@ -35,7 +35,7 @@ class regcontroller extends Controller
         //поиск по ID регистрирующегося пользователя
         $order = User::find($User->uid);
         //отправка to эмэйл из формы сообщение из класса MailTest
-       // Mail::to($request->get('email'))->send(new MailTest($order));
+        Mail::to($request->get('email'))->send(new MailTest($order));
         //хэш пароля для DB
         $User->GeneratePassword($request->get('password'));
         
