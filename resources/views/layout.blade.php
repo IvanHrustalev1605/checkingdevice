@@ -83,6 +83,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('OderIndex')}}">
+              <span data-feather="file"></span>
+              Заказы
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('AccountingIndex')}}">
               <span data-feather="bar-chart-2"></span>
               Бухгалтерия

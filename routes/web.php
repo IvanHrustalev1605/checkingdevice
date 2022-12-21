@@ -13,6 +13,7 @@ use App\Http\Controllers\VerifierController;
  use App\Http\Controllers\Auth\Employee\LoginController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\Auth\Employee\RegController as EmployeeRegController;
+use App\Http\Controllers\OdersController;
 
 Route::get('/', [mainauthcontroller::class, 'index'])->name('index');
 Route::POST('/login', [mainauthcontroller::class, 'login'])->name('login');
@@ -61,6 +62,13 @@ Route::group([
      Route::get('/verifier', [VerifierController::class, 'index'])->name('VerifierIndex');
      Route::get('/verifier/create', [VerifierController::class, 'createForm'])->name('verifierCreateForm');
      Route::POST('/verifier/create', [VerifierController::class, 'create'])->name('verifierCreate');
+
+     Route::get('/oder', [OdersController::class, 'index'])->name('OderIndex');
+     Route::get('/oder/create', [OdersController::class, 'create'])->name('OderForm');
+     Route::post('/oder/create', [OdersController::class, 'store'])->name('OderAdd');
+     Route::get('/oder/edit{ID}', [OdersController::class, 'edit'])->name('OderEdit');
+     Route::POST('/oder/edit{ID}', [OdersController::class, 'update'])->name('OderUpdate');
+     Route::delete('/oder{id}', [OdersController::class, 'delete'])->name('OderDelete');
 });
 
    
