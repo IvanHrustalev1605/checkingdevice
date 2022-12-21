@@ -69,6 +69,7 @@ Route::group([
      Route::get('/oder/edit{ID}', [OdersController::class, 'edit'])->name('OderEdit');
      Route::POST('/oder/edit{ID}', [OdersController::class, 'update'])->name('OderUpdate');
      Route::delete('/oder{id}', [OdersController::class, 'delete'])->name('OderDelete');
+     Route::get('/oder/update', [OdersController::class, 'updateStatus']);
 });
 
    

@@ -5,10 +5,19 @@
     {{csrf_field()}}
     <div class="col-md-6">
   <label for="object" class="form-label">Выберите объект</label>
-<select id="object" name = "ObjID" value="{{ old('object') }}">
-<option  value="">Выберите...</option>
+<select id="object" name = "ObjID">
+<option  value="{{$oder->Object->ObjID}}">{{$oder->Object->ObjName}}</option>
     @foreach ($objects as $obj)
   <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
+    @endforeach
+</select>
+  </div>
+  <div class="col-md-6">
+  <label for="object" class="form-label">Статус заказа...</label>
+<select id="object" name = "osid">
+<option  value="{{$oder->OderStatus->osid}}">{{$oder->OderStatus->status}}</option>
+    @foreach ($oderstatus as $status)
+  <option  value="{{$status->osid}}">{{$status->status}}</option>
     @endforeach
 </select>
   </div>
@@ -22,7 +31,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Когда заказано</label>
-    <input type="text" name="when" value = "{{$oder->when}}" class="form-control" id="inputEmail4">
+    <input type="date" name="when" value = "{{$oder->when}}" class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Оплачено или нет</label>
@@ -30,7 +39,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Когда оплачено</label>
-    <input type="text" name="whenPaid" value = "{{$oder->whenPaid}}"  class="form-control" id="inputEmail4">
+    <input type="date" name="whenPaid" value = "{{$oder->whenPaid}}"  class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Номер счета</label>
@@ -38,7 +47,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Примерная дата поставки</label>
-    <input type="text" name="delivery" value = "{{$oder->delivery}}" class="form-control" id="inputEmail4">
+    <input type="date" name="delivery" value = "{{$oder->delivery}}" class="form-control" id="inputEmail4">
   </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Добавить</button>
