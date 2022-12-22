@@ -13,10 +13,10 @@
                   <form class = "form-check-inline" action="{{route('Sort')}}"  method="GET">
                     <div class="row">
                     <div class="col-6 col-sm-3"><label  class="form-label">Укажите номер прибора</label>
-                                <input class="form-control form-control-sm" name = "SortDeviceNumber" type="text" ></div>
+                                <input class="form-control form-control-sm" name = "SortDeviceNumber" value = "{{$request->query('SortDeviceNumber')}}"type="text" ></div>
                         <div class="col-6 col-sm-4">
                         <label for="filters">Выбор объект</label>
-                            <select id="filters" name = "sort"  >
+                            <select id="filters" name = "sort">
                             <option  value="">Выберите...</option>
                                     @foreach ($objects as $obj)
                                 <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
@@ -24,31 +24,31 @@
                               </select><br>
                               
                                   <label  class="form-label">Укажите год следующей поверки...</label>
-                                <input class="form-control form-control-sm" name = "Year" value="{{old('Year')}}"  type="text" ><br>
+                                <input class="form-control form-control-sm" name = "Year" value="{{$request->query('Year')}}"  type="text" ><br>
 
                           </div>  
                     </div>   
                           <div class="row">
                                     <div class="col-sm-5">
                                       <label  class="form-label">Дата следующей поверки от...</label>
-                                      <input class="form-control form-control-sm" name = "SortDateUp"  type="date" >
+                                      <input class="form-control form-control-sm" name = "SortDateUp"  value="{{$request->query('SortDateUp')}}"  type="date" >
                                       <label  class="form-label">Дата следующей поверки до...</label>
-                                      <input class="form-control form-control-sm" name = "SortDateTo"  type="date" >
+                                      <input class="form-control form-control-sm" name = "SortDateTo"  value="{{$request->query('SortDateTo')}}" type="date" >
                                     </div>
                                     <div class="col-sm-5">
                                       <label  class="form-label">Дата текущей поверки от...</label>
-                                      <input class="form-control form-control-sm" name = "SortCurrentDateUp"  type="date" >
+                                      <input class="form-control form-control-sm" name = "SortCurrentDateUp" value="{{$request->query('SortCurrentDateUp')}}" type="date" >
                                       <label  class="form-label">Дата текущей поверки до...</label>
-                                      <input class="form-control form-control-sm" name = "SortCurrentDateTo"  type="date" >
+                                      <input class="form-control form-control-sm" name = "SortCurrentDateTo"value="{{$request->query('SortCurrentDateTo')}}"  type="date" >
                                     </div>
                                     <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" name = "sortDESC" value="sortDESC" id="flexCheckDefault"  >
+                                      <input class="form-check-input" type="checkbox" name = "sortDESC" value="{{$request->query('sortDESC')}}" id="flexCheckDefault"  >
                                       <label class="form-check-label" for="flexCheckDefault">
                                         По убыванию
                                       </label>
                                     </div>
                                     <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" name = "sortASC" value="sortASC" id="flexCheckDefault"  >
+                                      <input class="form-check-input" type="checkbox" name = "sortASC" value="{{$request->query('sortASC')}}" id="flexCheckDefault"  >
                                       <label class="form-check-label" for="flexCheckDefault">
                                         По возрастанию
                                       </label>

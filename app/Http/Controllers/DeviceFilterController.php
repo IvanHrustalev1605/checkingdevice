@@ -12,7 +12,7 @@ class DeviceFilterController extends Controller
     public function sort(Request $request, Pribori $devices){
             $objects = Objects::all();
             $device = $devices->getBySearch($request)->get();
-            return view('pribori.index', ['pribors' => $device, 'objects'=>$objects]);
+            return view('pribori.index', ['pribors' => $device, 'objects'=>$objects, 'request' => $request]);
 
     }
     
