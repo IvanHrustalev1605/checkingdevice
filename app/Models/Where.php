@@ -17,7 +17,8 @@ class Where extends Model
    protected $fillable = [
         'VID',
         'delivered',
-        'takenAway'
+        'takenAway',
+        'status'
     ];
 
     public function Pribor(){

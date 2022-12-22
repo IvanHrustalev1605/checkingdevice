@@ -11,12 +11,14 @@ use  Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
+use function GuzzleHttp\Promise\all;
+
 class PriboriController extends Controller
 {
-    public function Index(){
+    public function Index(Request $request){
         $pribors = Pribori::all();
         $objects = Objects::all();
-        return view('pribori.index', ['pribors' => $pribors, 'objects' => $objects]);
+        return view('pribori.index', ['pribors' => $pribors, 'objects' => $objects, 'request' => $request]);
     }
     public function create(){
         $objects = Objects::all();

@@ -33,7 +33,7 @@
   <div class="col-md-12">
   <label for="verifiers" class="form-label">Выберите где сейчас прибор</label>
   <select id="verifiers" name = "VID" >
-                              <option  value="">Выберите...</option>    
+                              <option  value="5">Установлен на объекте</option>    
                               @foreach($verifiers as $verifier)
                                 <option  value="{{$verifier->VID}}">{{$verifier->name}}</option>   
                                 @endforeach  

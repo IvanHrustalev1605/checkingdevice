@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\OderFilterController;
+use App\Models\Filters\Oders\OderSearch;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
+
 
 class Oders extends Model
 {
@@ -57,5 +61,10 @@ public function togglePaid(){
     If ($this->paidfor == 1){
         return true;
     }
+}
+public function getBySearch(Request $request)
+{
+    $builder = (new OderSearch())->apply($request);
+    return $builder;
 }
 }

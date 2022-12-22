@@ -7,6 +7,24 @@
       <form action="{{route('OderForm')}}" method="GET">
       <button type="submit" class="btn btn-info">Добавить</button><hr>
       </form>
+      <form class = "form-check-inline" action="{{route('OderSort')}}"  method="GET">
+      <div class="row">
+      <label for="filters">Выбор объекта</label>
+                        <div class="col-12 col-sm-12">
+
+                       
+                            <select id="filters" name = "sort">
+                            <option  value="">Выберите...</option>
+                                    @foreach ($objects as $object)
+                                <option  value="{{$object->ObjID}}">{{$object->ObjName}}</option>
+                                    @endforeach
+                              </select><br>
+                          </div> 
+                          </div>
+                      <br>
+                      <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
+                      </form>
+
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>

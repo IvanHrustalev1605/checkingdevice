@@ -13,6 +13,7 @@ use App\Http\Controllers\VerifierController;
  use App\Http\Controllers\Auth\Employee\LoginController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\Auth\Employee\RegController as EmployeeRegController;
+use App\Http\Controllers\OderFilterController;
 use App\Http\Controllers\OdersController;
 
 Route::get('/', [mainauthcontroller::class, 'index'])->name('index');
@@ -70,6 +71,7 @@ Route::group([
      Route::POST('/oder/edit{ID}', [OdersController::class, 'update'])->name('OderUpdate');
      Route::delete('/oder{id}', [OdersController::class, 'delete'])->name('OderDelete');
      Route::get('/oder/update', [OdersController::class, 'updateStatus']);
+     Route::get('/oder/sortByObject', [OderFilterController::class, 'sort'])->name('OderSort');
 });
 
    

@@ -50,7 +50,7 @@
     <input type="date" name="delivery" value = "{{$oder->delivery}}" class="form-control" id="inputEmail4">
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Добавить</button>
+    <button type="submit" class="btn btn-primary">Изменить</button>
   </div>
  
 </form>

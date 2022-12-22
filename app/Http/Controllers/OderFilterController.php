@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Objects;
+use App\Models\Oders;
 use Illuminate\Support\Carbon;
 use App\Models\Pribori;
 
-class DeviceFilterController extends Controller
+class OderFilterController extends Controller
 {
-    public function sort(Request $request, Pribori $devices){
-            $objects = Objects::all();
-            $device = $devices->getBySearch($request)->get();
-            return view('pribori.index', ['pribors' => $device, 'objects'=>$objects]);
+    public function sort(Request $request, Oders $oders){
+        $objects = Objects::all();
+            $oders = $oders->getBySearch($request)->get();
+            return view('oders.index', ['oders' => $oders, 'objects' => $objects]);
 
     }
     

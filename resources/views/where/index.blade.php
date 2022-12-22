@@ -17,16 +17,20 @@
           <tbody>
             <tr>
               <td>{{$w->Pribor->name}}</td>
-              @IF($w->Verifier->VID === 2)
-              <td>Укажите...</td>
+              @IF($w->Verifier->VID === 5)
+              <td>Установлен на объекте</td>
               @else
               <td>{{$w->Verifier->name}}
-              <a href = "{{route('VerifierIndex')}}"><p class="moreInfo">(подробнее)</a></p>
+              <a href = "{{route('VerifierIndex')}}"><p class="moreInfo">(подробнее о поверители)</a></p>
               </td>
               @endif
               <td>{{$w->delivered}}</td>
-              <td>{{$w->takenAway}}</td>    
+              <td>{{$w->takenAway}}</td>  
+              @IF($w->Verifier->VID === 5)
+              <td>Поверен, установлен</td>
+              @else  
               <td>{{$w->status}}</td>
+              @endif
             </tr>
           </tbody>
         </table>

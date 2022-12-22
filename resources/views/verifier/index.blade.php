@@ -10,7 +10,6 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>id</th>
               <th>Название</th>
               <th>Адресс</th>
               <th>Телефон</th>
@@ -20,9 +19,8 @@
           <tbody>
             @foreach($verifiers as $verifier)
             <tr>
-              @if($verifier->VID == 2)
+              @if($verifier->VID == 5)
               @else
-              <td>{{$verifier->VID}}</td>
               <td>{{$verifier->name}}</td>
               <td>{{$verifier->adress}}</td>
               <td>{{$verifier->phone}}</td>

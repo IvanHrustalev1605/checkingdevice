@@ -11,7 +11,8 @@ class OdersController extends Controller
 {
     public function index(){
         $oders = Oders::all();
-        return view('oders.index', ['oders' => $oders]);
+        $objects = Objects::all();
+        return view('oders.index', ['oders' => $oders, 'objects' => $objects]);
     }
     public function create(){
         $objects = Objects::all();

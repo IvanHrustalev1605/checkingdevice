@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Телефон</label>
-    <input type="text" name="phome" class="form-control" id="inputEmail4">
+    <input type="text" name="phone" class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Email</label>
