@@ -16,10 +16,10 @@ class Oders extends Model
     protected $primaryKey = 'odid';
 
     public function Object(){
-        return $this->hasOne(Objects::class, 'ObjID');
+        return $this->belongsTo(Objects::class, 'ObjID');
     }
     public function OderStatus(){
-        return $this->hasOne(OderStatus::class, 'osid');
+        return $this->belongsTo(OderStatus::class, 'osid');
     }
     protected $fillable = [ 
         'ObjID',

@@ -38,5 +38,9 @@
       <form action="{{route('editWhereForm', $w->PriborID)}}" method="GET">
       <button type="submit" class="btn btn-info">Изменить</button><hr>
       </form>
+      <form action="{{route('PriboriIndex')}}" method="GET">
+      <button type="submit" class="btn btn-info">Назад</button><hr>
+      </form>
+
 
 @endsection

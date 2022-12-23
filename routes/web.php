@@ -15,12 +15,24 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\Auth\Employee\RegController as EmployeeRegController;
 use App\Http\Controllers\OderFilterController;
 use App\Http\Controllers\OdersController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
+
+Route::group([
+    'middleware' => 'guest'
+], function(){
 Route::get('/', [mainauthcontroller::class, 'index'])->name('index');
 Route::POST('/login', [mainauthcontroller::class, 'login'])->name('login');
 
 Route::POST('/reg', [regcontroller::class, 'add'])->name('addUser');
 Route::get('/registration', [regcontroller::class, 'index'])->name('indexReg');
+
+Route::get('/fogot-password', [ForgotPasswordController::class, 'index'])->name('indexResetPassword');
+Route::post('/fogot-password', [ForgotPasswordController::class, 'store'])->name('ResetPassword');
+Route::get('/reset-password', [ResetPasswordController::class, 'create'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.request');
+});
 
 
 Route::group([
@@ -31,12 +43,6 @@ Route::group([
  Route::get('/main', [DashBoardController::class, 'index'])->name('dashboard');
  Route::get('/main/edit{ID}', [DashBoardController::class, 'edit'])->name('dashboardEdit');
  Route::POST('/main/edit{ID}', [DashBoardController::class, 'update'])->name('dashboardUpdate');
-
- Route::POST('/loginEmployee', [LoginController::class, 'loginEmployee'])->name('AuthEmployee');
- Route::get('/employee', [LoginController::class, 'indexEmployee'])->name('EmloyeeLogin');
-
- Route::get('/employee/reg', [EmployeeRegController::class, 'indexEmployee'])->name('indexEmployee');
- Route::POST('/employee', [EmployeeRegController::class, 'add'])->name('addEmployee');
 
  Route::get('/objects', [ObjectsController::class, 'index'])->name('ObjectsIndex');
      Route::get('/objects/create', [ObjectsController::class, 'create'])->name('AddFormObject');

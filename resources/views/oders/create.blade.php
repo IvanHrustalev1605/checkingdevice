@@ -5,7 +5,7 @@
     {{csrf_field()}}
     <div class="col-md-6">
   <label for="object" class="form-label">Выберите объект</label>
-<select id="object" name = "ObjID" value="{{ old('object') }}">
+<select id="object" name = "ObjID">
 <option  value="">Выберите...</option>
     @foreach ($objects as $obj)
   <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
@@ -34,8 +34,11 @@
     <input type="date" name="when" class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Оплачено или нет</label>
-    <input type="text" name="paidfor" class="form-control" id="inputEmail4">
+  <label for="paidfor" class="form-label"></label>
+<select id="object" name = "paidfor">
+<option  value="0">Не оплачено</option>
+<option  value="0">Оплачено</option>
+</select>
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Когда оплачено</label>

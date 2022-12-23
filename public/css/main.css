@@ -11,7 +11,7 @@
 }
 .filters-background {
     
-    background:linear-gradient(200deg,#d2e8ec,#bfeaf1); /* Цвета градиента */
+    background:linear-gradient(200deg,#d2e8ec,#7ed6e4); /* Цвета градиента */
     background-size:500% 500%;
     -webkit-animation:ServiceAnimation 10s ease infinite;
     -moz-animation:ServiceAnimation 10s ease infinite;

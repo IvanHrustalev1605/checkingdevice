@@ -67,55 +67,22 @@
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-              @if (session('success'))
-   <div class="alert alert-info" role="alert">
-  {{session('success')}}
-</div>
-@endif
-              @if (session('messageOK'))
-   <div class="alert alert-info" role="alert">
-  {{session('messageOK')}}
-</div>
-@endif
-@if (session('status'))
-   <div class="alert alert-info" role="alert">
-  {{session('status')}}
-</div>
-@endif
-@include('errors.validErrors')
-              <form action="{{route('login')}}" method="POST">
+
+              <form action="{{route('ResetPassword')}}" method="POST">
               {{csrf_field()}}
-                  <div class="d-flex align-items-center mb-3 pb-1">
+              <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                     <span class="underlined underline-clip">Made on Earth by humans</span>
                   </div>
-
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Войдите в Ваш аккаунт</h5>
-
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Заполните email для восстановления пароля</h5>
+                  @include('errors.validErrors')
                   <div class="form-outline mb-4">
                     <input type="email" id="form2Example17" name = "email" class="form-control form-control-lg" />
                     <label class="form-label"  for="form2Example17">Email</label>
                   </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form2Example27" name = "password" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example27">Пароль</label>
+                  <div class="pt-1 mb-4">     
+                     <button type="submit" class="btn btn-info">Восстановить пароль</button><hr>
                   </div>
-
-                  <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="remember" id="remember">
-            <label class="form-check-label" for="remember">
-                Запомнить меня
-            </label>
-        </div>
-                  <div class="pt-1 mb-4">
-                        
-                        <button type="submit" class="btn btn-info">Войти</button><hr>
-                  </div>
-
-                  <a class="small text-muted" href="{{route('indexResetPassword')}}">Забыли пароль?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Еще не зарегистрированы? <a href="{{route('indexReg')}}"
-                      style="color: #393f81;">Зарегистрируйтесь тут</a></p>
                 </form>
 
               </div>

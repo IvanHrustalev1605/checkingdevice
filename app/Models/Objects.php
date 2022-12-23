@@ -21,5 +21,7 @@ class Objects extends Model
     public function Where(){
         return $this->hasOne(Where::class, 'WID');
     }
-    
+    public function Oder(){
+        return $this->hasOne(Oders::class, 'odid');
+    }
 }

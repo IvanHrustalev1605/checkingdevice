@@ -46,7 +46,11 @@
               <td>{{$oder->Object->ObjName}}</td>
               <td>{{$oder->name}}</td>
               <td>{{$oder->where}}</td>
+              @IF($oder->when === null)
+              <td>Ждет заказа</td>
+              @else
               <td>{{$oder->ChangeDateFormat1($oder->when)}}</td>
+              @endif
               @IF ($oder->paidfor == 0)
               <td>Не оплачено</td>
               @else ($oder->paidfor == 1)
@@ -64,10 +68,13 @@
               @else
               <td><div class = "bg-info bg-gradient">{{$oder->delivery}}</div></td>
               @endif
-
+              @If($oder->OderStatus->osid == 1 )
+              <td><div class = "bg-danger">{{$oder->OderStatus->status}}</div></td>
+              @else
               <td>{{$oder->OderStatus->status}}</td>
+              @endif
               <td>
-                
+              
               <a class="bi bi-pencil-fill" href="{{route('OderEdit', $oder->odid)}}"></a>
               {{Form::open(['route' => ['OderDelete', $oder->odid],
                             'method' => 'delete'])}}
