@@ -2,11 +2,18 @@
 
 namespace App\Console;
 
+use App\Console\Commands\TestCron;
+use App\Mail\Test\MailTest;
+use App\Models\User;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Mail;
 
 class Kernel extends ConsoleKernel
 {
+    protected $command =[
+        TestCron::class
+    ];
     /**
      * Define the application's command schedule.
      *
@@ -15,7 +22,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        
+         $schedule->command('text:oderCrone')->everyMinute();
     }
 
     /**
@@ -27,6 +35,7 @@ class Kernel extends ConsoleKernel
     {
         $this->load(__DIR__.'/Commands');
 
-        require base_path('routes/console.php');
+       require base_path('routes/console.php');
+
     }
 }
