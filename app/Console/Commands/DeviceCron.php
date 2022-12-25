@@ -37,21 +37,26 @@ class DeviceCron extends Command
      */
     public function handle()
     {
-        $now = Carbon::now();
+        $now = Carbon::now('Europe/Moscow');
+        $arrObjName = [];
+        $arrNumber = [];
         $devices = Pribori::all();
         foreach($devices as $device){
-            If(($now->diffInMonths($device->nextDate)) > 1){
-            $arr[] = $device->Objects->ObjName;
-           $arrValue[] = $device->number;
-           $arrKeyValue = array_combine($arr, $arrValue);
+            If(($now->diffInMonths($device->currentDate)) > 1){
+           //понять почему берет только последние значение
+           array_push($arrObjName,$device->Objects->ObjName );
+           array_push($arrNumber,$device->number );
         }
+        }
+
+        foreach($arrObjName as $key => $ObjName){
+
+            $result[] = [$ObjName => $arrNumber[$key]] ;
         }
         $oder = User::find(6);
-
-        //Mail::to($oder->email)->send(new MailCron( $arrKeyValue));
-        If(isset($arrKeyValue)){
-        return Log::info( $arrKeyValue);
-    }
-    else return Log::info( 0);
-    }
+        If(isset($result)){
+        Mail::to($oder->email)->send(new MailCron( $result));
+              return Log::info(1);
+         }
+}
 }

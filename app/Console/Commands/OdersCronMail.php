@@ -48,15 +48,7 @@ class OdersCronMail extends Command
            $arrKeyValue = array_combine($arr, $arrValue);
         }
         }
-       // Mail::to($oder->email)->send(new OdersMailCron($arrKeyValue));
+        Mail::to($oder->email)->send(new OdersMailCron($arrKeyValue));
         return Log::info($arrKeyValue);
 }
 }
-        /*$oders = json_decode(Oders::where('paidfor', 0)->get()) ;
-        foreach($oders as $o){
-            $arrKey[] = $o->ObjID;
-            //$arrValue[] = $o->name;
-            $arrKeyValue = array_combine($arrKey, $arrValue);
-        }
-        //если нужно из массива в строку
-        //$arrToStr = implode(", ", $arrKeyValue);*/

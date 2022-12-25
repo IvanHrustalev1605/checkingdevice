@@ -1,14 +1,14 @@
 @extends('layout')
 @section('content')
-<div class="navMain">
-@include('supportViews.navbar')
-</div>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 pribori">Приборы</h1>
-      </div>
-      <form action="{{route('AddFormPribor')}}" method="GET">
-      <button type="submit" class="btn btn-info">Добавить</button><hr>
-      </form>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
       <div class="filters-background  p-3">
                   <form class = "form-check-inline" action="{{route('Sort')}}"  method="GET">
                     <div class="row">
@@ -65,6 +65,17 @@
                           </div>
                         </div>
                         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 pribori">Приборы</h1>
+      </div>
+      <form action="{{route('AddFormPribor')}}" method="GET">
+      <button type="submit" class="btn btn-info">Добавить</button><hr>
+      </form>
+
    @if (session('message'))
    <div class="alert alert-info p-1" role="alert">
   {{session('message')}}

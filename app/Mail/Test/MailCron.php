@@ -25,7 +25,7 @@ class MailCron extends Mailable
     public function build()
     {
         return $this->from('example@example.com', 'Example')
-                ->markdown('mail.test.mail-cron')
+                ->markdown('mail.test.mail-cron-device')
                 ->with([
                 'DeviceAll' => $this->devices,
                 ]);
