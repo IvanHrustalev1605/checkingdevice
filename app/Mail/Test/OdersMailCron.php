@@ -2,9 +2,7 @@
 
 namespace App\Mail\Test;
 
-use App\Models\Oders;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -26,7 +24,7 @@ class OdersMailCron extends Mailable
     public function build()
     {
         return $this->from('example@example.com', 'Example')
-                ->view('mail.test.mail-cron')
+                ->view('mail.test.mail-cron-oders')
                 ->with([
                 'CurrentDate' => $this->oders
                 ]);
@@ -51,7 +49,7 @@ class OdersMailCron extends Mailable
     public function content()
     {
         return new Content(
-            view: 'mail.test.mail-cron',
+            view: 'mail.test.mail-cron-oders',
         );
     }
 

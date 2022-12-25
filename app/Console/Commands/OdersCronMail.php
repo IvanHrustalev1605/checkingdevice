@@ -5,11 +5,9 @@ namespace App\Console\Commands;
 use App\Mail\Test\MailCron;
 use App\Mail\Test\OdersMailCron;
 use App\Models\Oders;
-use App\Models\Pribori;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,7 +18,7 @@ class OdersCronMail extends Command
      *
      * @var string
      */
-    protected $signature = 'text:oderCrone';
+    protected $signature = 'orders:crone';
 
     /**
      * The console command description.
@@ -40,17 +38,25 @@ class OdersCronMail extends Command
      */
     public function handle()
     {   
-        $now = Carbon::now();
-        $oders = json_decode(Oders::where('paidfor', 0)->get()) ;
+        $oder = User::find(6);
+        
+       $a =  Oders::all();
+        foreach($a as $b){
+            If($b->paidfor == 0){
+           $arr[] = $b->Object->ObjName;
+           $arrValue[] = $b->name;
+           $arrKeyValue = array_combine($arr, $arrValue);
+        }
+        }
+       // Mail::to($oder->email)->send(new OdersMailCron($arrKeyValue));
+        return Log::info($arrKeyValue);
+}
+}
+        /*$oders = json_decode(Oders::where('paidfor', 0)->get()) ;
         foreach($oders as $o){
             $arrKey[] = $o->ObjID;
-            $arrValue[] = $o->name;
+            //$arrValue[] = $o->name;
             $arrKeyValue = array_combine($arrKey, $arrValue);
         }
         //если нужно из массива в строку
-        //$arrToStr = implode(", ", $arrKeyValue);
-        $oder = User::find(6);
-        Mail::to($oder->email)->send(new OdersMailCron($arrKeyValue));
-        return Log::info(1);
-}
-}
+        //$arrToStr = implode(", ", $arrKeyValue);*/
