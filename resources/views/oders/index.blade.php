@@ -24,7 +24,7 @@
                       <br>
                       <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
                       </form>
-
+    <div class="container">
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -85,5 +85,5 @@
           </tbody>
         </table>
       </div>
-
+    </div>
 @endsection

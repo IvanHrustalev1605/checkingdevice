@@ -38,7 +38,7 @@ class MailCron extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Mail Cron',
+            subject: 'Приборы которые нужно поверить',
         );
     }
 

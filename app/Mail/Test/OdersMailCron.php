@@ -37,7 +37,7 @@ class OdersMailCron extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Oders Mail Cron',
+            subject: 'Не оплаченные заказы',
         );
     }
 

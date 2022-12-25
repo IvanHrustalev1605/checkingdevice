@@ -1,10 +1,17 @@
 @extends('layout')
 @section('content')
-<div class="accordion" id="accordionExample">
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 pribori">Приборы</h1>
+      </div>
+      <form action="{{route('AddFormPribor')}}" method="GET">
+      <button type="submit" class="btn btn-info">Добавить</button><hr>
+      </form>
+      <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-        Accordion Item #1
+        Фильтры
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -69,13 +76,6 @@
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 pribori">Приборы</h1>
-      </div>
-      <form action="{{route('AddFormPribor')}}" method="GET">
-      <button type="submit" class="btn btn-info">Добавить</button><hr>
-      </form>
-
    @if (session('message'))
    <div class="alert alert-info p-1" role="alert">
   {{session('message')}}
@@ -91,22 +91,23 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Название</th>
-              <th>Номер</th>
-              <th>Объект</th>
-              <th>Где находится</th>
-              <th>Поверен до</th>
-              <th>Дата следующей поверки</th>
-              <th>Коментарии</th>
-              <th>Кто вносил изменения</th>
-              <th>Действия</th>
+              <th scope="col">Id</th>
+              <th scope="col">Название</th>
+              <th scope="col">Номер</th>
+              <th scope="col">Объект</th>
+              <th scope="col">Где находится</th>
+              <th scope="col">Поверен до</th>
+              <th scope="col">Дата следующей поверки</th>
+              <th scope="col">Коментарии</th>
+              <th scope="col">Кто вносил изменения</th>
+              <th scope="col">Действия</th>
               
             </tr>
           </thead>
           <tbody>
             @foreach($pribors as $pribor)
             <tr>
+              
               <td>{{$pribor->PriborID}}</td>
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
