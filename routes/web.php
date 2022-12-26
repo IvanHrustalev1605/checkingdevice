@@ -17,7 +17,7 @@ use App\Http\Controllers\OderFilterController;
 use App\Http\Controllers\OdersController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
-
+use App\Http\Controllers\UserController;
 
 Route::group([
     'middleware' => 'guest'
@@ -43,6 +43,10 @@ Route::group([
  Route::get('/main', [DashBoardController::class, 'index'])->name('dashboard');
  Route::get('/main/edit{ID}', [DashBoardController::class, 'edit'])->name('dashboardEdit');
  Route::POST('/main/edit{ID}', [DashBoardController::class, 'update'])->name('dashboardUpdate');
+
+ Route::get('/user/{id}', [UserController::class, 'index'])->name('userIndex');
+ Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('userEdit');
+ Route::POST('/user/edit/{id}', [UserController::class, 'update'])->name('userUpdate');
 
  Route::get('/objects', [ObjectsController::class, 'index'])->name('ObjectsIndex');
      Route::get('/objects/create', [ObjectsController::class, 'create'])->name('AddFormObject');

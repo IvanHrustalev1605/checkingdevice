@@ -6,11 +6,10 @@ namespace App\Models\Filters\Device;
 use App\Filters\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 
-class SortDeviceNumber implements Filterable{
+class comments implements Filterable{
 
     public static function apply(Builder $builder, $value)
-    {
-        return $builder->where('number','LIKE', "%$value%");
-
+    {   
+            return $builder->where('comments', '>', 'null');
     }
 }
