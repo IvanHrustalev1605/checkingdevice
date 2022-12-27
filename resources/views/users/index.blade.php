@@ -17,7 +17,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <img src="\storage\{!!$user->avatar!!}" alt="Admin" class="rounded-circle" width="200" height="190">
                     <div class="mt-3">
                       <h4>{{$user->name}} {{$user->surname}}</h4>
                       <p class="text-secondary mb-1">{{$user->post}}</p>

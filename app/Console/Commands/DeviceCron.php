@@ -43,7 +43,6 @@ class DeviceCron extends Command
         $devices = Pribori::all();
         foreach($devices as $device){
             If(($now->diffInMonths($device->currentDate)) > 1){
-           //понять почему берет только последние значение
            array_push($arrObjName,$device->Objects->ObjName );
            array_push($arrNumber,$device->number );
         }

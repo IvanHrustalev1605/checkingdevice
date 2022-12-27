@@ -114,12 +114,14 @@
               Заказы
             </a>
           </li>
+          @if((Auth::user()->is_admin) == 1 ||(Auth::user()->is_accounter) == 1 )
           <li class="nav-item">
             <a class="nav-link" href="{{route('AccountingIndex')}}">
               <span data-feather="bar-chart-2"></span>
               Бухгалтерия
             </a>
           </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link" href="{{route('VerifierIndex')}}">
               <span data-feather="bar-chart-2"></span>

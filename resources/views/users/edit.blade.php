@@ -1,13 +1,14 @@
 @extends('layout')
 @section('content')
 <div class="container">
+
 		<div class="main-body">
 			<div class="row">
 				<div class="col-lg-4">
-					<div class="card">
+					<div class="card">       
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
-								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+								<img src="\storage\{!!$user->avatar!!}" alt="Admin" class="rounded-circle p-1 bg-primary" width="150" height="130">
 								<div class="mt-3">
 									<h4>{{$user->name}}</h4>
 									<p class="text-secondary mb-1">{{$user->post}}</p>
@@ -42,6 +43,7 @@
 				<div class="col-lg-8">
 					<div class="card">
 						<div class="card-body">
+                        @include('errors.validErrors')
                             <form action="{{route('userUpdate', $user->uid)}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
 							<div class="row mb-3">

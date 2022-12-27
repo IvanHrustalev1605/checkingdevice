@@ -26,7 +26,7 @@ class mainauthcontroller extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Сочетание email и пароля не найдено!',
         ]);
     }
     

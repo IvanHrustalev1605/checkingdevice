@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -65,5 +66,9 @@ public function GeneratePassword($password){
         $this->password = bcrypt($password);
         $this->save();
     }
+}
+public function GetAvatar($value){
+    $url = Storage::url($value);
+    return $url;
 }
 }
