@@ -10,6 +10,7 @@
     <label for="inputPassword4" class="form-label">Заводской номер прибора</label>
     <input type="text" name="number" value="{{ $pribor->number }}" class="form-control" id="inputPassword4">
   </div>
+  <input type="hidden" name="uid" value="{{Auth::user()->uid}}" class="form-control" id="inputEmail4">
   <div class="col-md-6">
   <label for="object" class="form-label">Выберите организацию, чей прибор</label>
 <select id="object" name = "ObjID">

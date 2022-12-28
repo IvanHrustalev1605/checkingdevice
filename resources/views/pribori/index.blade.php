@@ -133,7 +133,7 @@
               <td>{{ $pribor->currentDate}}</td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
-              <td>{{Auth::user()->name}}</td>
+              <td>{{$pribor->Users->name}}</td>
               <td>
               <a class="bi bi-pencil-fill" href="{{route('EditPribor', $pribor->PriborID)}}"></a>
               {{Form::open(['route' => ['PriborDelete', $pribor->PriborID],

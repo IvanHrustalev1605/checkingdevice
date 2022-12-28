@@ -25,6 +25,7 @@
     <label for="inputEmail4" class="form-label">Название оборудования</label>
     <input type="text" name="name" class="form-control" id="inputEmail4">
   </div>
+    <input type="hidden" name="uid" value="{{Auth::user()->uid}}" class="form-control" id="inputEmail4">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Где заказано</label>
     <input type="text" name="where" class="form-control" id="inputEmail4">

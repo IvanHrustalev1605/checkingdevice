@@ -24,9 +24,10 @@
                       <br>
                       <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
                       </form>
-    <div class="container">
+    <div class="container-fluid">
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm caption-top">
+        <caption>Таблица заказов</caption>
           <thead>
             <tr>
               <th>Объект</th>
@@ -38,6 +39,7 @@
               <th>Номер счета</th>
               <th>Примерная дата поставки</th>
               <th>Статус</th>
+              <th>Кто вносил изменения</th>
               <th></th>
             </tr>
           </thead>
@@ -70,9 +72,12 @@
               @endif
               @If($oder->OderStatus->osid == 1 )
               <td><div class = "bg-danger">{{$oder->OderStatus->status}}</div></td>
+              @elseif($oder->OderStatus->osid == 7 )
+              <td><div class = "bg-oder-ok">{{$oder->OderStatus->status}}</div></td>
               @else
               <td>{{$oder->OderStatus->status}}</td>
               @endif
+              <td>{{$oder->Users->name}}</td>
               <td>
               
               <a class="bi bi-pencil-fill" href="{{route('OderEdit', $oder->odid)}}"></a>

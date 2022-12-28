@@ -103,13 +103,12 @@
                   </div>
 
                   <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="remember" id="remember">
+            <input type="checkbox" class="form-check-input" name="remember" checked id="remember">
             <label class="form-check-label" for="remember">
                 Запомнить меня
             </label>
         </div>
                   <div class="pt-1 mb-4">
-                        
                         <button type="submit" class="btn btn-info">Войти</button><hr>
                   </div>
 

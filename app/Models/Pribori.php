@@ -24,7 +24,8 @@ class Pribori extends Model
                            'nextDate',
                            'comments',
                              'VID',
-                            'ObjID'];
+                            'ObjID',
+                            'uid'];
 
     public function Objects(){
         return $this->belongsTo(Objects::class, 'ObjID');
@@ -34,6 +35,9 @@ class Pribori extends Model
     }
     public function Verifier(){
         return $this->belongsTo(Verifier::class, 'VID');
+    }
+    public function Users(){
+        return $this->belongsTo(User::class, 'uid');
     }
     public static function add($fields){
             $pribor = new static;

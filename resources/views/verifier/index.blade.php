@@ -6,6 +6,7 @@
       <form action="{{route('verifierCreateForm')}}" method="GET">
       <button type="submit" class="btn btn-info">Добавить</button><hr>
       </form>
+      <div class = "container">
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -19,7 +20,9 @@
           <tbody>
             @foreach($verifiers as $verifier)
             <tr>
-              @if($verifier->VID == 5)
+              @if($verifier->VID == 5 ||$verifier->VID == 6 ||
+                  $verifier->VID == 7 ||$verifier->VID == 8 ||
+                  $verifier->VID == 9)
               @else
               <td>{{$verifier->name}}</td>
               <td>{{$verifier->adress}}</td>
@@ -31,5 +34,5 @@
           </tbody>
         </table>
       </div>
-
+      </div>
 @endsection

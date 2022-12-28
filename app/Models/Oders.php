@@ -21,6 +21,9 @@ class Oders extends Model
     public function OderStatus(){
         return $this->belongsTo(OderStatus::class, 'osid');
     }
+    public function Users(){
+        return $this->belongsTo(User::class, 'uid');
+    }
     protected $fillable = [ 
         'ObjID',
         'name',
@@ -30,7 +33,8 @@ class Oders extends Model
         'whenPaid',
         'paidNumber',
         'delivery',
-        'osid'
+        'osid',
+        'uid'
     ];
     public static function add($fields){
         $user = new static;

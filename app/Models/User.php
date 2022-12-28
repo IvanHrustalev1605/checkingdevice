@@ -51,6 +51,12 @@ class User extends Authenticatable
     public function organisation(){
         return $this->belongsTo(Organisation::class, 'orgid');
     }
+    public function oders(){
+        return $this->hasMany(Oders::class, 'odid');
+    }
+    public function device(){
+        return $this->hasMany(Pribori::class, 'pid');
+    }
     public static function add($fields){
         $user = new static;
         $user->fill($fields);
