@@ -11,8 +11,8 @@
       </form>
       </div>
       <div class="col-3">
-      <form action="{{route('lessOdersIndex')}}" method="GET">
-      <button type="submit" class="btn btn-info">Cкрыть лишние столбцы</button><hr>
+      <form action="{{route('OderIndex')}}" method="GET">
+      <button type="submit" class="btn btn-info">Показать все столбцы</button><hr>
       </form>
       </div>
       </div>
@@ -20,6 +20,8 @@
       <div class="row">
       <label for="filters">Выбор объекта</label>
                         <div class="col-12 col-sm-12">
+
+                       
                             <select id="filters" name = "sort">
                             <option  value="">Выберите...</option>
                                     @foreach ($objects as $object)
@@ -39,15 +41,10 @@
             <tr>
               <th>Объект</th>
               <th>Название оборудования</th>
-              <th>Где заказано</th>
-              <th>Когда заказано</th>
-              <th>Оплата поставщику</th>
-              <th>Когда установлено</th>
               <th>Примерная дата поставки</th>
               <th>Статус</th>
-              <th>Номер счета</th>
               <th>Кто вносил изменения</th>
-              <th></th>
+              <th>Когда установлено</th>
             </tr>
           </thead>
           <tbody>
@@ -55,27 +52,6 @@
               <td>{{$oder->Object->ObjName}}</td>
               <td>{{$oder->name}}</td>
               <td>{{$oder->where}}</td>
-              @IF($oder->when === null)
-              <td>Ждет заказа</td>
-              @else
-              <td>{{$oder->ChangeDateFormat1($oder->when)}}</td>
-              @endif
-              @IF ($oder->paidfor == 0)
-              <td><div class = "bg-warning">Не оплачено</div></td>
-              @else ($oder->paidfor == 1)
-              <td>Оплачено</td>
-              @endif
-              @if($oder->installed == 0)
-              <td>Не установлено</td>
-              @else
-              <td>{{$oder->installed}}</td>
-              @endif
-             
-              @IF($oder->DiffDate($oder->delivery))
-              <td><div class = "bg-warning">{{$oder->delivery}}</div></td>
-              @else
-              <td><div class = "bg-info bg-gradient">{{$oder->delivery}}</div></td>
-              @endif
               @If($oder->OderStatus->osid == 1 )
               <td><div class = "bg-danger">{{$oder->OderStatus->status}}</div></td>
               @elseif($oder->OderStatus->osid == 7 )
@@ -83,8 +59,12 @@
               @else
               <td>{{$oder->OderStatus->status}}</td>
               @endif
-              <td>{{$oder->paidNumber}}</td>
               <td>{{$oder->Users->name}}</td>
+              @if($oder->installed == 0)
+              <td>Не установлено</td>
+              @else
+              <td>{{$oder->installed}}</td>
+              @endif
               <td>
               
               <a class="bi bi-pencil-fill" href="{{route('OderEdit', $oder->odid)}}"></a>

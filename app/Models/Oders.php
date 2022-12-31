@@ -34,7 +34,8 @@ class Oders extends Model
         'paidNumber',
         'delivery',
         'osid',
-        'uid'
+        'uid', 
+        'installed'
     ];
     public static function add($fields){
         $user = new static;

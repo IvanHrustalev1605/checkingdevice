@@ -75,6 +75,7 @@ Route::group([
      Route::POST('/verifier/create', [VerifierController::class, 'create'])->name('verifierCreate');
 
      Route::get('/oder', [OdersController::class, 'index'])->name('OderIndex');
+     Route::get('/oder/lessinfo', [OdersController::class, 'lessIndex'])->name('lessOdersIndex');
      Route::get('/oder/create', [OdersController::class, 'create'])->name('OderForm');
      Route::post('/oder/create', [OdersController::class, 'store'])->name('OderAdd');
      Route::get('/oder/edit{ID}', [OdersController::class, 'edit'])->name('OderEdit');

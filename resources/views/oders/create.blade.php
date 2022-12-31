@@ -53,6 +53,7 @@
     <label for="inputEmail4" class="form-label">Примерная дата поставки</label>
     <input type="date" name="delivery" class="form-control" id="inputEmail4">
   </div>
+    <input type="hidden" name="instaled" value="0" class="form-control" id="inputEmail4">
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Добавить</button>
   </div>

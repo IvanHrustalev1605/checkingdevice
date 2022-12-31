@@ -50,6 +50,10 @@
     <label for="inputEmail4" class="form-label">Примерная дата поставки</label>
     <input type="date" name="delivery" value = "{{$oder->delivery}}" class="form-control" id="inputEmail4">
   </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Когда установлено</label>
+    <input type="date" name="installed" value = "{{$oder->installed}}" class="form-control" id="inputEmail4">
+  </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Изменить</button>
   </div>
