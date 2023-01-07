@@ -18,6 +18,7 @@ use App\Http\Controllers\OdersController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 
 Route::group([
     'middleware' => 'guest'
@@ -48,7 +49,9 @@ Route::group([
  Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('userEdit');
  Route::POST('/user/edit/{id}', [UserController::class, 'update'])->name('userUpdate');
 
- Route::get('/objects', [ObjectsController::class, 'index'])->name('ObjectsIndex');
+    Route::get('/objects', [ObjectsController::class, 'index'])->name('ObjectsIndex');
+    Route::get('/objects/thisObject/{id}', [ObjectsController::class, 'thisObject'])->name('thisObject');
+    Route::post('/objects/thisObject/{id}/doc', [ObjectsController::class, 'documents'])->name('addDoc');
      Route::get('/objects/create', [ObjectsController::class, 'create'])->name('AddFormObject');
      Route::post('/objects/create', [ObjectsController::class, 'store'])->name('AddObject');
      Route::get('/objects/edit{ObjID}', [ObjectsController::class, 'edit'])->name('EditObject');
@@ -83,6 +86,10 @@ Route::group([
      Route::delete('/oder{id}', [OdersController::class, 'delete'])->name('OderDelete');
      Route::get('/oder/update', [OdersController::class, 'updateStatus']);
      Route::get('/oder/sortByObject', [OderFilterController::class, 'sort'])->name('OderSort');
+
+     Route::get('/linkstorage', function () {
+        Artisan::call('storage:link');
+    });
 });
 
    

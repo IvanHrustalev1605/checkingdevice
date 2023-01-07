@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Pribori;
 use App\Models\Where;
+use App\Models\ObjDoc;
+use Illuminate\Support\Facades\Storage;
 
 class Objects extends Model
 {
@@ -23,5 +25,12 @@ class Objects extends Model
     }
     public function Oder(){
         return $this->hasOne(Oders::class, 'odid');
+    }
+    public function ObjDoc(){
+        return $this->hasMany(ObjDoc::class, 'ObjID');
+    }
+    public function GetFiles($value){
+        $url = Storage::url($value);
+         return $url;
     }
 }

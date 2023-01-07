@@ -10,7 +10,6 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>Номер</th>
               <th>Название</th>
               <th>Комментарии</th>
               <th>Действия</th>
@@ -19,8 +18,7 @@
           <tbody>
             @foreach($objects as $object)
             <tr>
-              <td>{{$object->ObjID}}</td>
-              <td>{{$object->ObjName}}</td>
+              <td><a href = "{{route('thisObject', $object->ObjID)}}">{{$object->ObjName}}</a></td>
               <td>{{$object->comments}}</td>
               <td><a href="">Изменить</a>
               {{Form::open(['route' => ['objectDelete', $object->ObjID],

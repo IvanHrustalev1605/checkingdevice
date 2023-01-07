@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ObjDoc;
 use App\Models\Objects;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ObjectsController extends Controller
 {
@@ -11,6 +13,21 @@ class ObjectsController extends Controller
         $objects = Objects::all();
         return view('objects.index', ['objects' => $objects]);
     }
+    public function thisObject($id){
+        $object = Objects::find($id);
+        $documents = $object->ObjDoc;
+        return view('objects.thisObject', ['object' => $object, 'documents' => $documents]);
+    }
+    public function documents(Request $request, $id){
+            $objDoc = new ObjDoc;
+            $path = $request->file('document')->store('documents','public');
+            $objDoc->doc = $path;
+            $objDoc->ObjID = $id;
+            $objDoc->save(); 
+            
+            return redirect()->route('thisObject',['id' => $id]);
+    }
+
     public function create(){
         return view('objects.create');
     }

@@ -41,3 +41,10 @@
   .bg-oder-ok{
     background-color:#5fca53 ;
   }
+  .obj-name{
+    margin-left: 40%;
+
+  }
+  .thisObj{
+    border: 3px solid rgb(201, 210, 208);
+  }
