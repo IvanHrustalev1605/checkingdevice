@@ -103,10 +103,9 @@
             <button type="submit" class="btn btn-primary px-4 mt-2">Добавить</button>
     </form>
     <div>
-    
-        <img src="\documents/Eg48IDq72ln6QCGAGnTkfoVIi5NmxN5AlY5Vs3Yt.docx"
-           width="200" height="190">
-
+    @foreach($documents as $doc)
+        <img src="\storage\{!!$doc->doc!!}" width="200" height="190">
+    @endforeach
     </div>
 </div>
 </div>
