@@ -18,6 +18,15 @@ class ObjectsController extends Controller
         $documents = $object->ObjDoc;
         return view('objects.thisObject', ['object' => $object, 'documents' => $documents]);
     }
+    public function editObject($id){
+        $object = Objects::find($id);
+        return view('objects.thisObject_edit', ['object' => $object]);
+    }
+    public function updateObject(Request $request, $id){
+        $object = Objects::find($id);
+        $object->edit($request->all());
+        return redirect()->route('thisObject',['id' => $id]);
+    }
     public function documents(Request $request, $id){
         $validatedData = $request->validate([
             'document' => 'required',

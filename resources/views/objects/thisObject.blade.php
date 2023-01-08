@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="filters-background">
-<div class="container mt-2 ">
+<div class="container m-4 ">
   <div class="row justify-content-end">
     <div class="col-3">
     <p class="h5 m-1" >Адрес объекта</p>
@@ -37,7 +37,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-        Реквизиты
+        <h4>Реквизиты</h4>
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -94,14 +94,18 @@
     </div>
   </div>
 
-</div>
-<div class="storage mt-4 mb-4">
-
-    <div>
+@include('errors.validErrors')
+<form method="post" action="{{route('addDoc', $object->ObjID)}}" enctype="multipart/form-data">
+    {{csrf_field()}}
+            <div class="col-sm-9 text-secondary m-4">
+				<input type="file" name="document" class="form-control">
+			</div>
+            <button type="submit" class="btn btn-primary px-4 m-4">Добавить</button>
+    </form>
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doc">
-        Галлерея
+        <h4>Галлерея</h4>
       </button>
     </h2>
     <div id="doc" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -111,15 +115,10 @@
     </div>
     </div>
     </div>
-</div>
 <hr>
-@include('errors.validErrors')
-<form method="post" action="{{route('addDoc', $object->ObjID)}}" enctype="multipart/form-data">
+<form method="get" action="{{route('editDoc', $object->ObjID)}}">
     {{csrf_field()}}
-            <div class="col-sm-9 text-secondary">
-				<input type="file" name="document" class="form-control">
-			</div>
-            <button type="submit" class="btn btn-primary px-4 mt-2">Добавить</button>
+            <button type="submit" class="btn btn-primary px-4 m-4">Заполнить(изменить) данные</button>
     </form>
 </div>
 
@@ -138,6 +137,7 @@
       const figure = document.createElement('figure');
       const figcaption = document.createElement('figcaption');
       const link = document.createElement('a');
+      const dateCreated = item.created_at;
       link.href = '\\storage\\' + item.doc;
       link.target = '_blank';
 
@@ -145,8 +145,8 @@
 
       itemContainer.classList.add('col-lg-3', 'col-md-4', 'col-6');
       figure.classList.add('figure', 'm-4');
-      figcaption.classList.add('figure-caption');
-      figcaption.innerText = "Открыть";
+      figcaption.classList.add('figure-caption', 'text-center');
+      figcaption.innerText = 'Открыть' ;
       img.classList.add('img-fluid');
       img.width = 200;
       img.height = 190;
@@ -158,12 +158,10 @@
         img.src = '\\storage\\icons\\icon_doc.jpg';
       }
       figure.appendChild(img);
-      link.appendChild(figcaption);
+      link.appendChild(img);
       figure.appendChild(link);
       itemContainer.appendChild(figure);
       container.appendChild(itemContainer);
-
     })
-
   </script>
 @endsection

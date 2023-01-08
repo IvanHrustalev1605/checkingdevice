@@ -52,6 +52,8 @@ Route::group([
     Route::get('/objects', [ObjectsController::class, 'index'])->name('ObjectsIndex');
     Route::get('/objects/thisObject/{id}', [ObjectsController::class, 'thisObject'])->name('thisObject');
     Route::post('/objects/thisObject/{id}/doc', [ObjectsController::class, 'documents'])->name('addDoc');
+    Route::get('/objects/thisObject/{id}/editdoc', [ObjectsController::class, 'editObject'])->name('editDoc');
+    Route::post('/objects/thisObject/{id}/editdoc', [ObjectsController::class, 'updateObject'])->name('thisObjectUpdate');
      Route::get('/objects/create', [ObjectsController::class, 'create'])->name('AddFormObject');
      Route::post('/objects/create', [ObjectsController::class, 'store'])->name('AddObject');
      Route::get('/objects/edit{ObjID}', [ObjectsController::class, 'edit'])->name('EditObject');

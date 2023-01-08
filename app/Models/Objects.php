@@ -15,7 +15,17 @@ class Objects extends Model
 
     protected $primaryKey = 'ObjID';
     
-    protected $fillable = ['ObjName', 'comments' ];
+    protected $fillable = ['ObjName', 
+                           'comments',
+                        'adress',
+                        'contactPerson',
+                        'phone',
+                        'INN',
+                        'KPP', 
+                        'RSCH',
+                        'KSCH',
+                        'OKPO',
+                        'OGRN'];
 
     public function Pribori(){
         return $this->hasMany(Pribori::class, 'PriborID');
@@ -33,4 +43,17 @@ class Objects extends Model
         $url = Storage::url($value);
          return $url;
     }
+    public static function add($fields){
+        $od = new static;
+        $od->fill($fields);
+        $od->save(); 
+        return $od;
+}
+public function edit($fields){
+        $this->fill($fields);
+        $this->save();
+}
+public function remove(){
+    $this->delete();
+}
 }
