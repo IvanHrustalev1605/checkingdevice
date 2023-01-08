@@ -91,11 +91,7 @@
     </div>
   </div>
 </div>
-   @if (session('message'))
-   <div class="alert alert-info p-1" role="alert">
-  {{session('message')}}
-</div>
-@endif
+
 @if (session('messageOK'))
    <div class="alert alert-info p-1" role="alert">
   {{session('messageOK')}}

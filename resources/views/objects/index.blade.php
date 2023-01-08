@@ -17,7 +17,7 @@
           <tbody>
             @foreach($objects as $object)
             <tr>
-              <td>{{$object->ObjName}}<a href = "{{route('thisObject', $object->ObjID)}}"><p>подробнее..</a></td>
+              <td>{{$object->ObjName}}<a href = "{{route('thisObject', $object->ObjID)}}"><p>открыть полную информацию..</a></td>
               <td>
               {{Form::open(['route' => ['objectDelete', $object->ObjID],
                             'method' => 'delete'])}}
