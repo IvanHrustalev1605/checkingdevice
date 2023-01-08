@@ -19,6 +19,15 @@ class ObjectsController extends Controller
         return view('objects.thisObject', ['object' => $object, 'documents' => $documents]);
     }
     public function documents(Request $request, $id){
+        $validatedData = $request->validate([
+            'document' => 'required',
+            'document.*' => 'mimes:jpg,bmp,png, jpeg'
+            ],
+            [
+                'document.required' => 'Добавьте изображение!',
+                'document.mimes' => 'Разрешенные форматы:jpg,bmp,png'
+            ]);
+
             $objDoc = new ObjDoc;
             $path = $request->file('document')->store('documents','public');
             $objDoc->doc = $path;
