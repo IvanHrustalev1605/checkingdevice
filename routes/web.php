@@ -10,9 +10,6 @@ use App\Http\Controllers\WhereController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceFilterController;
 use App\Http\Controllers\VerifierController;
- use App\Http\Controllers\Auth\Employee\LoginController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use App\Http\Controllers\Auth\Employee\RegController as EmployeeRegController;
 use App\Http\Controllers\OderFilterController;
 use App\Http\Controllers\OdersController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -89,9 +86,6 @@ Route::group([
      Route::get('/oder/update', [OdersController::class, 'updateStatus']);
      Route::get('/oder/sortByObject', [OderFilterController::class, 'sort'])->name('OderSort');
 
-     Route::get('/linkstorage', function () {
-        Artisan::call('storage:link');
-    });
 });
 
    
