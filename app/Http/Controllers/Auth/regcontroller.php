@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\Test\MailTest;
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
-class regcontroller extends Controller
+class RegController extends Controller
 {
     public function index(){
         $organisations = Organisation::all();

@@ -1,13 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AccountingController;
-use App\Http\Controllers\auth\mainauthcontroller;
-use App\Http\Controllers\auth\regcontroller;
+use App\Http\Controllers\Auth\MainAuthController;
+use App\Http\Controllers\Auth\RegController;
 use App\Http\Controllers\DashBoardController;
 use App\Http\Controllers\ObjectsController;
 use App\Http\Controllers\PriboriController;
 use App\Http\Controllers\WhereController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceFilterController;
 use App\Http\Controllers\VerifierController;
 use App\Http\Controllers\OderFilterController;
@@ -15,16 +16,16 @@ use App\Http\Controllers\OdersController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Artisan;
+
 
 Route::group([
     'middleware' => 'guest'
 ], function(){
-Route::get('/', [mainauthcontroller::class, 'index'])->name('index');
-Route::POST('/login', [mainauthcontroller::class, 'login'])->name('login');
+Route::get('/', [MainAuthController::class, 'index'])->name('index');
+Route::POST('/login', [MainAuthController::class, 'login'])->name('login');
 
-Route::POST('/reg', [regcontroller::class, 'add'])->name('addUser');
-Route::get('/registration', [regcontroller::class, 'index'])->name('indexReg');
+Route::POST('/reg', [RegController::class, 'add'])->name('addUser');
+Route::get('/registration', [RegController::class, 'index'])->name('indexReg');
 
 Route::get('/fogot-password', [ForgotPasswordController::class, 'index'])->name('indexResetPassword');
 Route::post('/fogot-password', [ForgotPasswordController::class, 'store'])->name('ResetPassword');
@@ -37,7 +38,7 @@ Route::group([
     'middleware' => 'auth'
 ], function(){
  // Только аутентифицированные пользователи могут получить доступ к этому маршруту ...
- Route::get('/logout', [mainauthcontroller::class, 'logout'])->name('logout');
+ Route::get('/logout', [MainAuthController::class, 'logout'])->name('logout');
  Route::get('/main', [DashBoardController::class, 'index'])->name('dashboard');
  Route::get('/main/edit{ID}', [DashBoardController::class, 'edit'])->name('dashboardEdit');
  Route::POST('/main/edit{ID}', [DashBoardController::class, 'update'])->name('dashboardUpdate');

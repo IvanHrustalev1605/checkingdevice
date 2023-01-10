@@ -138,7 +138,7 @@
       const figcaption = document.createElement('figcaption');
       const link = document.createElement('a');
       const dateCreated = item.created_at;
-      link.href = '\\storage\\' + item.doc;
+      link.href = '/storage/' + item.doc;
       link.target = '_blank';
 
       const img = document.createElement('img');
@@ -152,10 +152,10 @@
       img.height = 190;
 
       if (types.img.includes(ext)) {
-        img.src = '\\storage\\' + item.doc;
+        img.src = '/storage/' + item.doc;
       }
       else if(types.docs.includes(ext)){
-        img.src = '\\storage\\icons\\icon_doc.jpg';
+        img.src = '/storage/icons/icon_doc.jpg';
       }
       figure.appendChild(img);
       link.appendChild(img);
