@@ -35,7 +35,8 @@ class Oders extends Model
         'delivery',
         'osid',
         'uid', 
-        'installed'
+        'installed',
+        'customerPaid'
     ];
     public static function add($fields){
         $user = new static;

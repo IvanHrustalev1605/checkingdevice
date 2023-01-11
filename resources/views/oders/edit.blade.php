@@ -39,8 +39,15 @@
     <input type="text" name="paidfor" value = "{{$oder->paidfor}}" class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Когда оплачено</label>
+    <label for="inputEmail4" class="form-label">Оплата поставщику </label>
     <input type="date" name="whenPaid" value = "{{$oder->whenPaid}}"  class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+  <label for="customerPaid" class="form-label">Оплата заказчиком</label>
+<select id="object" name = "customerPaid">
+<option  value="0">Не оплачено</option>
+<option  value="1">Оплачено</option>
+</select>
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Номер счета</label>

@@ -56,6 +56,7 @@
               <th>Где заказано</th>
               <th>Когда заказано</th>
               <th>Оплата поставщику</th>
+              <th>Оплата заказчиком</th>
               <th>Когда установлено</th>
               <th>Примерная дата поставки</th>
               <th>Статус</th>
@@ -77,6 +78,11 @@
               @IF ($oder->paidfor == 0)
               <td><div class = "bg-warning">Не оплачено</div></td>
               @else ($oder->paidfor == 1)
+              <td>Оплачено</td>
+              @endif
+              @IF ($oder->customerPaid == 0)
+              <td><div class = "bg-warning">Не оплачено</div></td>
+              @else ($oder->customerPaid == 1)
               <td>Оплачено</td>
               @endif
               @if($oder->installed == 0)
