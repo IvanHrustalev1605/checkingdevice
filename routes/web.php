@@ -33,7 +33,6 @@ Route::get('/reset-password', [ResetPasswordController::class, 'create'])->name(
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.request');
 });
 
-
 Route::group([
     'middleware' => 'auth'
 ], function(){

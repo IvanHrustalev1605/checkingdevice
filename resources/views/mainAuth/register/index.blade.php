@@ -49,12 +49,12 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/navMain.css">
-    <link rel="stylesheet" href="/css/selectDivice.css">
-    <link rel="stylesheet" href="/css/mainLogo.css">
-    <link href="/css/examples/dashboard.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <link rel="stylesheet" href="/public/css/navMain.css">
+    <link rel="stylesheet" href="/public/css/selectDivice.css">
+    <link rel="stylesheet" href="/public/css/mainLogo.css">
+    <link href="/public/css/examples/dashboard.css" rel="stylesheet"></head>
 <section class="vh-100" style="background-color: #9A616D;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -62,7 +62,7 @@
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="img/Ilon.jpg"
+              <img src="/public/img/Ilon.jpg"
                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">

@@ -6,7 +6,7 @@ namespace App\Models\Filters\Device;
 use App\Filters\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 
-class sortDESC implements Filterable{
+class SortDESC implements Filterable{
 
     public static function apply(Builder $builder, $value)
     {

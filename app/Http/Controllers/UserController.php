@@ -24,7 +24,7 @@ class UserController extends Controller
             'post' => 'required',
             'mobile' => 'required',
             'email' =>'required|email',
-            'avatar' => 'image'
+            'avatar' => 'required|image'
         ],
         [
             'name.required' => 'Заполните имя!',
@@ -37,7 +37,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->edit($request->all());
         
-            $path = $request->file('avatar')->store('uploads', 'public');
+            $path = $request->file('avatar')->store('public/uploads', 'public');
             $user->avatar = $path;
             $user->save();
         return redirect()->route('userIndex', $id);

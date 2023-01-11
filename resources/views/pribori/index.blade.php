@@ -102,7 +102,7 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">Id</th>
+              
               <th scope="col">Название</th>
               <th scope="col">Номер</th>
               <th scope="col">Объект</th>
@@ -119,7 +119,7 @@
             @foreach($pribors as $pribor)
             <tr>
               
-              <td>{{$pribor->PriborID}}</td>
+              
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>

@@ -25,7 +25,7 @@ class MailTest extends Mailable
     }
     public function build()
     {
-        return $this->from('example@example.com', 'Example')
+        return $this->from('checkingdevice@checkingdevice.ru')
                 ->view('mail.test.mail-test')
                 ->with([
                 'testMailEmail' => $this->testMail->email,
@@ -40,7 +40,7 @@ class MailTest extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Mail Test',
+            subject: 'Данные для входа',
         );
     }
 

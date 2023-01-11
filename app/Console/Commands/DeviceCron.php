@@ -42,7 +42,7 @@ class DeviceCron extends Command
         $arrNumber = [];
         $devices = Pribori::all();
         foreach($devices as $device){
-            If(($now->diffInMonths($device->currentDate)) > 1){
+            If(($now->diffInMonths($device->currentDate)) < 1){
            array_push($arrObjName,$device->Objects->ObjName );
            array_push($arrNumber,$device->number );
         }
@@ -54,7 +54,7 @@ class DeviceCron extends Command
         }
         $oder = User::find(6);
         If(isset($result)){
-        Mail::to($oder->email)->send(new MailCron( $result));
+        Mail::to('khrustalev16@gmail.com')->send(new MailCron( $result));
               return Log::info(1);
          }
 }

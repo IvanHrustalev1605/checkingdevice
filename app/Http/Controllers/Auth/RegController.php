@@ -17,12 +17,13 @@ class RegController extends Controller
     }
     public function add(Request $request){
         $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'min:6'],
             'orgid' => ['required']
         ],[
             'required' => 'Пожалууйста, заполните :attribute',
-            'min' => 'Длина пароля не меньше :min!'
+            'min' => 'Длина пароля не меньше :min!',
+            'unique' => 'Эта электронная почта уже используется!'
         ],
         [
             'email' => 'электронную почту',
@@ -40,6 +41,6 @@ class RegController extends Controller
         $User->GeneratePassword($request->get('password'));
         
   
-        return redirect()->route('index')->with('messageOK', 'Вы успешно прошли регистрацию!');
+        return redirect()->route('index')->with('messageOK', 'Вы успешно прошли регистрацию. Письмо с именем пользователя и паролем отправлено на указанную почту!');
     }
 }

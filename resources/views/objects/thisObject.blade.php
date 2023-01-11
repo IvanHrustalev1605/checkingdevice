@@ -105,7 +105,7 @@
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doc">
-        <h4>Галлерея</h4>
+        <h4>Галерея</h4>
       </button>
     </h2>
     <div id="doc" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -138,7 +138,7 @@
       const figcaption = document.createElement('figcaption');
       const link = document.createElement('a');
       const dateCreated = item.created_at;
-      link.href = '/storage/' + item.doc;
+      link.href = '/public/storage/' + item.doc;
       link.target = '_blank';
 
       const img = document.createElement('img');
@@ -152,10 +152,10 @@
       img.height = 190;
 
       if (types.img.includes(ext)) {
-        img.src = '/storage/' + item.doc;
+        img.src = '/public/storage/' + item.doc;
       }
       else if(types.docs.includes(ext)){
-        img.src = '/storage/icons/icon_doc.jpg';
+        img.src = '/public/storage/icons/icon_doc.jpg';
       }
       figure.appendChild(img);
       link.appendChild(img);

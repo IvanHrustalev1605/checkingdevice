@@ -9,6 +9,6 @@ class AccountingController extends Controller
 {
     public function Index(){
         $accountings = Accounting::all();
-        return view('Accounting.index', ['accountings' => $accountings]);
+        return view('accounting.index', ['accountings' => $accountings]);
     }
 }

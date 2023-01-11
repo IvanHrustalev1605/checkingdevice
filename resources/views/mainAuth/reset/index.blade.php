@@ -49,12 +49,12 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/navMain.css">
-    <link rel="stylesheet" href="/css/selectDivice.css">
-    <link rel="stylesheet" href="/css/mainLogo.css">
-    <link href="/css/examples/dashboard.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <link rel="stylesheet" href="/public/css/navMain.css">
+    <link rel="stylesheet" href="/public/css/selectDivice.css">
+    <link rel="stylesheet" href="/public/css/mainLogo.css">
+    <link href="/public/css/examples/dashboard.css" rel="stylesheet"></head>
 <section class="vh-100" style="background-color: #9A616D;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

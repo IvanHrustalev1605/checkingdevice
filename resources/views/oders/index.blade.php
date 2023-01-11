@@ -15,6 +15,13 @@
       <button type="submit" class="btn btn-info">Cкрыть лишние столбцы</button><hr>
       </form>
       </div>
+                        <div class="col-5">
+                        
+                              <form method="get" action="{{route('OderIndex')}}">
+                                 <button type="submit" class="btn btn-info btn-mini ">Сбросить все фильтры</button><hr>
+                              </form>
+                          
+                        </div>
       </div>
       <form class = "form-check-inline" action="{{route('OderSort')}}"  method="GET">
       <div class="row">
@@ -29,6 +36,13 @@
                           </div> 
                           </div>
                       <br>
+                      <div class="form-check col-sm-2">
+                                    <input class="form-check-input" type="checkbox" name = "PaidFor" id="flexCheckDefault"  >
+                                      <label class="form-check-label" for="flexCheckDefault">
+                                        Неоплаченные
+                                      </label>
+                                    </div>
+                                    <br>
                       <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
                       </form>
     <div class="container-fluid">

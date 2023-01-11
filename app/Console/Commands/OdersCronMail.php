@@ -38,17 +38,25 @@ class OdersCronMail extends Command
      */
     public function handle()
     {   
-        $oder = User::find(6);
-        
-       $a =  Oders::all();
-        foreach($a as $b){
-            If($b->paidfor == 0){
-           $arr[] = $b->Object->ObjName;
-           $arrValue[] = $b->name;
-           $arrKeyValue = array_combine($arr, $arrValue);
+       $oders =  Oders::all();
+       $arrObjName = [];
+       $arrOderName = [];
+       foreach($oders as $oder){
+           If($oder->paidfor == 0){
+          array_push($arrObjName,$oder->Object->ObjName );
+          array_push($arrOderName,$oder->name );
+       }
+       }
+
+       foreach($arrObjName as $key => $ObjName){
+
+           $result[] = [$ObjName => $arrOderName[$key]] ;
+       }
+
+       If(isset($result)){
+       Mail::to('khrustalev16@gmail.com')->send(new MailCron( $result));
+             return Log::info(1);
         }
-        }
-        Mail::to($oder->email)->send(new OdersMailCron($arrKeyValue));
-        return Log::info($arrKeyValue);
+
 }
 }

@@ -68,15 +68,15 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/navMain.css">
-    <link rel="stylesheet" href="/css/selectDivice.css">
-    <link rel="stylesheet" href="/css/mainLogo.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/userpage.css">
-    <link href="/css/examples/dashboard.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <link rel="stylesheet" href="/public/css/navMain.css">
+    <link rel="stylesheet" href="/public/css/selectDivice.css">
+    <link rel="stylesheet" href="/public/css/mainLogo.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/userpage.css">
+    <link href="/public/css/examples/dashboard.css" rel="stylesheet"></head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class="navbar navbar-dark">

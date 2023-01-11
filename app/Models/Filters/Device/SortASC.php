@@ -6,10 +6,11 @@ namespace App\Models\Filters\Device;
 use App\Filters\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 
-class name implements Filterable{
+class SortASC implements Filterable{
 
     public static function apply(Builder $builder, $value)
-    {   
-            return $builder->where('name', 'LIKE', "%$value%");
+    {
+        return $builder->orderBy('nextDate', 'ASC');
+
     }
 }
