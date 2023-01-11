@@ -35,10 +35,6 @@
     <input type="date" name="when" value = "{{$oder->when}}" class="form-control" id="inputEmail4">
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Оплачено или нет</label>
-    <input type="text" name="paidfor" value = "{{$oder->paidfor}}" class="form-control" id="inputEmail4">
-  </div>
-  <div class="col-md-6">
   <label for="paidfor" class="form-label">Оплата поставщику</label>
 <select id="object" name = "paidfor">
 <option  value="0">Не оплачено</option>
