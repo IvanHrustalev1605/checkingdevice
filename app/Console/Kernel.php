@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         
-        $schedule->command('orders:crone')->dailyAt('22:03')->runInBackground();
+        $schedule->command('orders:crone')->dailyAt('22:03');
          $schedule->command('device:crone')->dailyAt('9:49');
     }
 
