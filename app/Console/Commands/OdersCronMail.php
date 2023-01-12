@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\Test\MailCron;
 use App\Mail\Test\OdersMailCron;
 use App\Models\Oders;
 use App\Models\User;
@@ -54,7 +53,7 @@ class OdersCronMail extends Command
        }
 
        If(isset($result)){
-       Mail::to('khrustalev16@gmail.com')->send(new MailCron( $result));
+       Mail::to('khrustalev16@gmail.com')->send(new OdersMailCron( $result));
              return Log::info(1);
         }
 

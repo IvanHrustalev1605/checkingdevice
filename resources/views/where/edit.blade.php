@@ -13,15 +13,15 @@
   </div>
   <div class="col-md-6">
     <label for="inputAddress2" class="form-label">Когда отвезен</label>
-    <input type="text" name="delivered" class="form-control" id="inputAddress2" value="{{$w->delivered}}" placeholder="Дата в формате гггг-мм-дд">
+    <input type="date" name="delivered" class="form-control" id="inputAddress2" value="{{$w->delivered}}" placeholder="Дата в формате гггг-мм-дд">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Когда забрали</label>
-    <input type="text" name="takenAway" class="form-control" id="inputCity"value="{{$w->takenAway}}" placeholder="Дата в формате гггг-мм-дд">
+    <input type="date" name="takenAway" class="form-control" id="inputCity"value="{{$w->takenAway}}" placeholder="Дата в формате гггг-мм-дд">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Когда установлен</label>
-    <input type="text" name="" class="form-control" id="inputCity"value="" placeholder="Дата в формате гггг-мм-дд">
+    <input type="date" name="" class="form-control" id="inputCity"value="" placeholder="Дата в формате гггг-мм-дд">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Статус</label>
