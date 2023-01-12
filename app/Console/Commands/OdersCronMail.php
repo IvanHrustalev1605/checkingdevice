@@ -51,7 +51,7 @@ class OdersCronMail extends Command
        }
 
        If(isset($result)){
-       //Mail::to('khrustalev16@gmail.com')->send(new OdersMailCron( $result));
+       Mail::to('khrustalev16@gmail.com')->send(new OdersMailCron( $result));
              return Log::info(1);
         }
 
