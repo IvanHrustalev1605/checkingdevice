@@ -2,13 +2,11 @@
 
 namespace App\Console;
 
-use App\Console\Commands\DevicesCron;
-use App\Console\Commands\OdersCronMail;
-use App\Mail\Test\MailTest;
-use App\Models\User;
+
+
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Illuminate\Support\Facades\Mail;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -24,8 +22,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         
-        $schedule->command('orders:crone')->dailyAt('22:03');
-         $schedule->command('device:crone')->dailyAt('9:49');
+        $schedule->command('orders:crone')->everyMinute();
+         $schedule->command('device:crone')->everyMinute();
     }
 
     /**

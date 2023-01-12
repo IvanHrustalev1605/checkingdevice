@@ -11,6 +11,7 @@ use Illuminate\Queue\SerializesModels;
 class OdersMailCron extends Mailable
 {
     use Queueable, SerializesModels;
+    
     public $oders;
     /**
      * Create a new message instance.
