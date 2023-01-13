@@ -32,7 +32,6 @@ class PriboriController extends Controller
             'number'=>'required|',
             'ObjID' => 'required',
             'VID' => 'required',
-            'currentDate' =>'required|',
             'nextDate' => 'required|'
         ],
         [
@@ -40,7 +39,6 @@ class PriboriController extends Controller
             'number.required' => 'Заполните номер!',
             'ObjID.required' => 'Выеберите чей прибор!',
             'VID.required' => 'Укажите где он сейчас!',
-            'currentDate.required' => 'Заполните Дату текущей поверки!',
             'nextDate.required' => 'Заполните Дату следующей поверки!',
         ])->validate();
 
