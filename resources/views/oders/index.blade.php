@@ -37,15 +37,15 @@
                           </div>
                       <br>
                       <div class="form-check col-sm-2">
-                                    <input class="form-check-input" type="checkbox" name = "PaidFor" id="flexCheckDefault"  >
-                                      <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" name = "PaidFor" id="PaidFor"  >
+                                      <label class="form-check-label" for="PaidFor">
                                         Неоплаченные поставщику
                                       </label>
                                     </div>
                                     <br>
                                     <div class="form-check col-sm-2">
-                                    <input class="form-check-input" type="checkbox" name = "customerPaid" id="flexCheckDefault"  >
-                                      <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" name = "customerPaid" id="customerPaid"  >
+                                      <label class="form-check-label" for="customerPaid">
                                         Неоплаченные заказчиком
                                       </label>
                                     </div>
