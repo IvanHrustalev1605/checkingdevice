@@ -109,7 +109,6 @@
               <th scope="col">Номер</th>
               <th scope="col">Объект</th>
               <th scope="col">Где находится</th>
-              <th scope="col">Поверен до</th>
               <th scope="col">Дата следующей поверки</th>
               <th scope="col">Коментарии</th>
               <th scope="col">Кто вносил изменения</th>
@@ -125,10 +124,7 @@
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
-
-              <td>{{$pribor->Where->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
-
-              <td>{{ $pribor->currentDate}}</td> 
+              <td>{{$pribor->Where->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
               <td>{{$pribor->Users->name}}</td>
@@ -152,7 +148,6 @@
               <th scope="col">Номер</th>
               <th scope="col">Объект</th>
               <th scope="col">Где находится</th>
-              <th scope="col">Поверен до</th>
               <th scope="col">Дата следующей поверки</th>
               <th scope="col">Коментарии</th>
               <th scope="col">Кто вносил изменения</th>
@@ -168,10 +163,7 @@
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
-
-              <td>{{$pribor->Where->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
-
-              <td>{{ $pribor->currentDate}}</td> 
+              <td>{{$pribor->Where->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td> 
               <td>{{ $pribor->nextDate}}</td>
               <td>{{$pribor->comments}}</td>
               <td>{{$pribor->Users->name}}</td>

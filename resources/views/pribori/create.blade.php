@@ -22,11 +22,6 @@
 </select>
   </div>
   <div class="col-md-6">
-    <label for="inputAddress2" class="form-label">Дата текущей поверки</label>
-    <input type="date" name="currentDate" value="{{ old('currentDate') }}" class="form-control" id="inputAddress2">
-  </div>
-
-  <div class="col-md-6">
     <label for="inputCity" class="form-label">Дата следующей поверки</label>
     <input type="date" name="nextDate" value="{{ old('nextDate') }}" class="form-control" id="inputCity" placeholder="Дата в формате гггг-мм-дд">
   </div>
