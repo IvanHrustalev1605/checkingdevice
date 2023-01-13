@@ -36,6 +36,7 @@
                           </div> 
                           </div>
                       <br>
+                      <div class = "row">
                       <div class="form-check col-sm-2">
                                     <input class="form-check-input" type="checkbox" name = "PaidFor" id="PaidFor"  >
                                       <label class="form-check-label" for="PaidFor">
@@ -50,6 +51,7 @@
                                       </label>
                                     </div>
                                     <br>
+                        </div>
                       <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
                       </form>
     <div class="container-fluid">
