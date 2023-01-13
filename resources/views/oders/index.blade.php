@@ -10,11 +10,11 @@
       <button type="submit" class="btn btn-info">Добавить</button><hr>
       </form>
       </div>
-      <div class="col-3">
+      <!--<div class="col-3">
       <form action="{{route('lessOdersIndex')}}" method="GET">
       <button type="submit" class="btn btn-info">Cкрыть лишние столбцы</button><hr>
       </form>
-      </div>
+      </div>-->
                         <div class="col-5">
                         
                               <form method="get" action="{{route('OderIndex')}}">
@@ -39,7 +39,14 @@
                       <div class="form-check col-sm-2">
                                     <input class="form-check-input" type="checkbox" name = "PaidFor" id="flexCheckDefault"  >
                                       <label class="form-check-label" for="flexCheckDefault">
-                                        Неоплаченные
+                                        Неоплаченные поставщику
+                                      </label>
+                                    </div>
+                                    <br>
+                                    <div class="form-check col-sm-2">
+                                    <input class="form-check-input" type="checkbox" name = "customerPaid" id="flexCheckDefault"  >
+                                      <label class="form-check-label" for="flexCheckDefault">
+                                        Неоплаченные заказчиком
                                       </label>
                                     </div>
                                     <br>
