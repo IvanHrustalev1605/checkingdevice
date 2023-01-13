@@ -127,41 +127,44 @@
       img:['jpg', 'png', 'jpeg', 'bmp'],
       docs:['txt', 'docx']
     }
+    var objDocs = @json($objDocs->toArray());
     var documents = @json($documents->toArray());
     const container = document.getElementById('file-container'); 
 
     documents.forEach((item) => {
-    
-      const ext = item.doc.split('.').pop();
-      const itemContainer = document.createElement('div');
-      const figure = document.createElement('figure');
-      const figcaption = document.createElement('figcaption');
-      const link = document.createElement('a');
-      const dateCreated = item.created_at;
-      link.href = '/public/storage/' + item.doc;
-      link.target = '_blank';
+      console.log(item);
+          const ext = item.doc.split('.').pop();
+          const itemContainer = document.createElement('div');
+          const figure = document.createElement('figure');
+          const figcaption = document.createElement('figcaption');
+          const link = document.createElement('a');
+          const dateCreated = item.created_at;
+          link.href = '/public/storage/' + item.doc;
+          link.target = '_blank';
 
-      const img = document.createElement('img');
+          const img = document.createElement('img');
 
-      itemContainer.classList.add('col-lg-3', 'col-md-4', 'col-6');
-      figure.classList.add('figure', 'm-4');
-      figcaption.classList.add('figure-caption', 'text-center');
-      figcaption.innerText = 'Открыть' ;
-      img.classList.add('img-fluid');
-      img.width = 200;
-      img.height = 190;
+          itemContainer.classList.add('col-lg-3', 'col-md-4', 'col-6');
+          figure.classList.add('figure', 'm-4');
+          figcaption.classList.add('figure-caption', 'text-center');
+          figcaption.innerText = item.docName ;
+          img.classList.add('img-fluid');
+          img.width = 200;
+          img.height = 190;
 
-      if (types.img.includes(ext)) {
-        img.src = '/public/storage/' + item.doc;
-      }
-      else if(types.docs.includes(ext)){
-        img.src = '/public/storage/icons/icon_doc.jpg';
-      }
-      figure.appendChild(img);
-      link.appendChild(img);
-      figure.appendChild(link);
-      itemContainer.appendChild(figure);
-      container.appendChild(itemContainer);
-    })
+          if (types.img.includes(ext)) {
+            img.src = '/public/storage/' + item.doc;
+          }
+          else if(types.docs.includes(ext)){
+            img.src = '/public/storage/icons/icon_doc.jpg';
+          }
+          figure.appendChild(img);
+          link.appendChild(img);
+          figure.appendChild(link);
+          figure.appendChild(figcaption);
+          itemContainer.appendChild(figure);
+          container.appendChild(itemContainer);
+                 
+      });
   </script>
 @endsection

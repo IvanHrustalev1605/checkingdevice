@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ObjDoc;
 use App\Models\Objects;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ObjectsController extends Controller
@@ -16,7 +17,10 @@ class ObjectsController extends Controller
     public function thisObject($id){
         $object = Objects::find($id);
         $documents = $object->ObjDoc;
-        return view('objects.thisObject', ['object' => $object, 'documents' => $documents]);
+        $objDocs = DB::table('obj_docs')
+                ->where('ObjId', 'LIKE', $id)
+                ->get();
+        return view('objects.thisObject', ['object' => $object, 'documents' => $documents, 'objDocs' => $objDocs]);
     }
     public function editObject($id){
         $object = Objects::find($id);
@@ -37,11 +41,13 @@ class ObjectsController extends Controller
                 'document.mimes' => 'Разрешенные форматы:jpg,bmp,png'
             ]);
 
-            
+            $file = request()->file('document');
+            $name = $file->getClientOriginalName();
             $objDoc = new ObjDoc;
             $path = $request->file('document')->store('documents','public');
             $objDoc->doc = $path;
             $objDoc->ObjID = $id;
+            $objDoc->docName = $name;
             $objDoc->save(); 
             
             return redirect()->route('thisObject',['id' => $id]);

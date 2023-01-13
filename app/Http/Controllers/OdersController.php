@@ -14,11 +14,11 @@ class OdersController extends Controller
         $objects = Objects::all();
         return view('oders.index', ['oders' => $oders, 'objects' => $objects]);
     }
-    public function lessIndex(){
+    /*public function lessIndex(){
         $oders = Oders::all();
         $objects = Objects::all();
         return view('oders.lessindex', ['oders' => $oders, 'objects' => $objects]);
-    }
+    }*/
     public function create(){
         $objects = Objects::all();
         $oderstatus = OderStatus::all();
