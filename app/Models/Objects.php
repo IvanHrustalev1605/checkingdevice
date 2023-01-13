@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Filters\Objects\ObjectSearch;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Pribori;
 use App\Models\Where;
 use App\Models\ObjDoc;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class Objects extends Model
@@ -55,5 +57,10 @@ public function edit($fields){
 }
 public function remove(){
     $this->delete();
+}
+public function getBySearch(Request $request)
+{
+    $builder = (new ObjectSearch())->apply($request);
+    return $builder;
 }
 }

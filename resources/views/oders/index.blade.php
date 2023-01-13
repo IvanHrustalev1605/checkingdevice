@@ -37,14 +37,14 @@
                           </div>
                       <br>
                       <div class = "row">
-                      <div class="form-check col-sm-2">
+                      <div class="form-check col-sm-4 m-3">
                                     <input class="form-check-input" type="checkbox" name = "PaidFor" id="PaidFor"  >
                                       <label class="form-check-label" for="PaidFor">
                                         Неоплаченные поставщику
                                       </label>
                                     </div>
                                     <br>
-                                    <div class="form-check col-sm-2">
+                                    <div class="form-check col-sm-3 m-3">
                                     <input class="form-check-input" type="checkbox" name = "customerPaid" id="customerPaid"  >
                                       <label class="form-check-label" for="customerPaid">
                                         Неоплаченные заказчиком
@@ -52,9 +52,80 @@
                                     </div>
                                     <br>
                         </div>
+                        <div class = "row">
+                      <div class="form-check col-sm-4 mb-3 m-3">
+                                    <input class="form-check-input" type="checkbox" name = "PaidForOk" id="PaidForOk"  >
+                                      <label class="form-check-label" for="PaidForOk">
+                                        Оплаченные поставщику
+                                      </label>
+                                    </div>
+                                    <br>
+                                    <div class="form-check col-sm-3 m-3">
+                                    <input class="form-check-input" type="checkbox" name = "customerPaidOk" id="customerPaidOk"  >
+                                      <label class="form-check-label" for="customerPaidOk">
+                                        Оплаченные заказчиком
+                                      </label>
+                                    </div>
+                                    <br>
+                        </div>
                       <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
                       </form>
-    <div class="container-fluid">
+         @if(Auth::user()->is_admin == 0)
+         <div class="container-fluid">
+      <div class="table-responsive">
+        <table class="table table-striped table-sm caption-top">
+        <caption>Таблица заказов</caption>
+          <thead>
+            <tr>
+              <th>Объект</th>
+              <th>Название оборудования</th>
+              <th>Где заказано</th>
+              <th>Когда заказано</th>
+              <th>Когда установлено</th>
+              <th>Примерная дата поставки</th>
+              <th>Статус</th>
+              <th>Кто вносил изменения</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($oders as $oder)
+              <td>{{$oder->Object->ObjName}}</td>
+              <td>{{$oder->name}}</td>
+              <td>{{$oder->where}}</td>
+              @IF($oder->when === null)
+              <td>Ждет заказа</td>
+              @else
+              <td>{{$oder->ChangeDateFormat1($oder->when)}}</td>
+              @endif
+              @if($oder->installed == 0)
+              <td>Не установлено</td>
+              @else
+              <td>{{$oder->installed}}</td>
+              @endif
+             
+              @IF($oder->DiffDate($oder->delivery))
+              <td><div class = "bg-warning">{{$oder->delivery}}</div></td>
+              @else
+              <td><div class = "bg-info bg-gradient">{{$oder->delivery}}</div></td>
+              @endif
+              @If($oder->OderStatus->osid == 1 )
+              <td><div class = "bg-danger">{{$oder->OderStatus->status}}</div></td>
+              @elseif($oder->OderStatus->osid == 7 )
+              <td><div class = "bg-oder-ok">{{$oder->OderStatus->status}}</div></td>
+              @else
+              <td>{{$oder->OderStatus->status}}</td>
+              @endif
+              <td>{{$oder->Users->name}}</td>
+              <td><a class="bi bi-pencil-fill" href="{{route('OderEdit', $oder->odid)}}"></a></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+         @else
+         <div class="container-fluid">
       <div class="table-responsive">
         <table class="table table-striped table-sm caption-top">
         <caption>Таблица заказов</caption>
@@ -127,4 +198,6 @@
         </table>
       </div>
     </div>
+         @endif
+
 @endsection

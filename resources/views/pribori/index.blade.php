@@ -97,6 +97,51 @@
   {{session('messageOK')}}
 </div>
 @endif
+<!------------------------------------------------------->
+@if(Auth::user()->is_admin == 0)
+<div class="container">
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              
+              <th scope="col">Название</th>
+              <th scope="col">Номер</th>
+              <th scope="col">Объект</th>
+              <th scope="col">Где находится</th>
+              <th scope="col">Поверен до</th>
+              <th scope="col">Дата следующей поверки</th>
+              <th scope="col">Коментарии</th>
+              <th scope="col">Кто вносил изменения</th>
+              <th scope="col">Действия</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($pribors as $pribor)
+            <tr>
+              
+              
+              <td>{{$pribor->name}}</td>
+              <td>{{$pribor->number}}</td>
+              <td>{{$pribor->Objects->ObjName}}</td>
+
+              <td>{{$pribor->Where->Verifier->name}}<a href="{{route('WhereIndex', $pribor->PriborID)}}"><p class = "moreInfo">(подробнее)</p></a></td>
+
+              <td>{{ $pribor->currentDate}}</td> 
+              <td>{{ $pribor->nextDate}}</td>
+              <td>{{$pribor->comments}}</td>
+              <td>{{$pribor->Users->name}}</td>
+              <td>
+              <a class="bi bi-pencil-fill" href="{{route('EditPribor', $pribor->PriborID)}}"></a></td>
+            </tr>
+            @endforeach
+
+          </tbody>
+        </table>
+      </div>
+  </div>
+@else
 <div class="container">
       <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -143,5 +188,7 @@
         </table>
       </div>
   </div>
+@endif
+
                 
 @endsection

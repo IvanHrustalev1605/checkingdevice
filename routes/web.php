@@ -14,6 +14,7 @@ use App\Http\Controllers\VerifierController;
 use App\Http\Controllers\OderFilterController;
 use App\Http\Controllers\OdersController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ObjectFilterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
 
@@ -56,6 +57,7 @@ Route::group([
      Route::get('/objects/edit{ObjID}', [ObjectsController::class, 'edit'])->name('EditObject');
      Route::post('/objects/edit{ObjID}', [ObjectsController::class, 'update'])->name('UpdateObject');
      Route::delete('/objects{ObjID}', [ObjectsController::class, 'delete'])->name('objectDelete');
+     Route::get('/objects/sortByObject', [ObjectFilterController::class, 'sort'])->name('ObjectSort');
 
      Route::get('/pribori', [PriboriController::class, 'index'])->name('PriboriIndex');
      Route::get('/create', [PriboriController::class, 'create'])->name('AddFormPribor');
