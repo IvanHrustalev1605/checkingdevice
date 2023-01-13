@@ -22,7 +22,7 @@ Route::group([
     'middleware' => 'guest'
 ], function(){
 Route::get('/', [MainAuthController::class, 'index'])->name('index');
-Route::POST('/login', [MainAuthController::class, 'login'])->name('login');
+Route::POST('/', [MainAuthController::class, 'login'])->name('login');
 
 Route::POST('/reg', [RegController::class, 'add'])->name('addUser');
 Route::get('/registration', [RegController::class, 'index'])->name('indexReg');

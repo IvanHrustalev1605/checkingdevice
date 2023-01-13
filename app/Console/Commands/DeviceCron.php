@@ -54,7 +54,7 @@ class DeviceCron extends Command
         }
         $oder = User::find(6);
         If(isset($result)){
-        Mail::to('khrustalev16@gmail.com')->send(new MailCron( $result));
+        Mail::to('ergogaz@gmail.com')->send(new MailCron( $result));
               return Log::info(1);
          }
 }

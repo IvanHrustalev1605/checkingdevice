@@ -98,7 +98,7 @@
 <form method="post" action="{{route('addDoc', $object->ObjID)}}" enctype="multipart/form-data">
     {{csrf_field()}}
             <div class="col-sm-9 text-secondary m-4">
-				<input type="file" name="document" class="form-control">
+				<input type="file" name="document[]" class="form-control">
 			</div>
             <button type="submit" class="btn btn-primary px-4 m-4">Добавить</button>
     </form>

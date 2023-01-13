@@ -48,7 +48,7 @@ public function edit($fields){
         $this->fill($fields);
         $this->save();
 }
-public function remove(){
+public function delete(){
     $this->delete();
 }
 public function ChangeDateFormat1($value){

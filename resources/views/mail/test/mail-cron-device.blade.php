@@ -1,6 +1,5 @@
 <meta charset="UTF-8">
-
-<div>Не оплачено!</div>
+<div><b>Обратите внимание!!!</b></div>
 @foreach ($DeviceAll as $device)
    @foreach ($device as $key => $el)
    <div>Объект: {{ $key }}, номер: {{ $el }}</div>

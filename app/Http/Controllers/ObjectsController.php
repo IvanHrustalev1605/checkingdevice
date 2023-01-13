@@ -37,6 +37,7 @@ class ObjectsController extends Controller
                 'document.mimes' => 'Разрешенные форматы:jpg,bmp,png'
             ]);
 
+            
             $objDoc = new ObjDoc;
             $path = $request->file('document')->store('documents','public');
             $objDoc->doc = $path;
