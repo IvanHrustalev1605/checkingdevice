@@ -6,7 +6,7 @@ namespace App\Models\Filters\Oders;
 use App\Filters\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 
-class customerPaid implements Filterable{
+class CustomerPaid implements Filterable{
 
     public static function apply(Builder $builder, $value)
     {
