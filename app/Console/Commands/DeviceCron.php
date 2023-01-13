@@ -40,21 +40,21 @@ class DeviceCron extends Command
         $now = Carbon::now('Europe/Moscow');
         $arrObjName = [];
         $arrNumber = [];
+        $arrNames = [];
         $devices = Pribori::all();
         foreach($devices as $device){
-            If(($now->diffInMonths($device->currentDate)) < 1){
+            If(($now->diffInMonths($device->nextDate)) < 1 && ($device->VID == 5)){
            array_push($arrObjName,$device->Objects->ObjName );
            array_push($arrNumber,$device->number );
+           array_push($arrNames,$device->name );
         }
         }
-
+        
         foreach($arrObjName as $key => $ObjName){
-
-            $result[] = [$ObjName => $arrNumber[$key]] ;
+            $result[] = [$ObjName => [$arrNumber[$key] => $arrNames[$key]]] ;
         }
-        $oder = User::find(6);
         If(isset($result)){
-        Mail::to('ergogaz@gmail.com')->send(new MailCron( $result));
+        Mail::to('khrustalev16@gmail.com')->send(new MailCron( $result));
               return Log::info(1);
          }
 }

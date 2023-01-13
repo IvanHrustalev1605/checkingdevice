@@ -2,8 +2,12 @@
 <div><b>Обратите внимание!!!</b></div>
 @foreach ($DeviceAll as $device)
    @foreach ($device as $key => $el)
-   <div>Объект: {{ $key }}, номер: {{ $el }}</div>
+      @foreach ($el as $e => $k)
+   ##<div>Объект: {{ $key }}, номер: {{ $e }}, название: {{ $k }}</div>
+      @endforeach
    @endforeach
 @endforeach
+
+
 
 
