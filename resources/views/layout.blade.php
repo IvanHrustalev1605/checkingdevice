@@ -66,6 +66,9 @@
           font-size: 3.5rem;
         }
       }
+      @media (min-width: 700px) {
+     .prose {display: block;}
+}
     </style>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/public/css/footer.css">
@@ -87,7 +90,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
