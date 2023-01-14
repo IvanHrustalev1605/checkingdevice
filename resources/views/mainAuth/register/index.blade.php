@@ -76,9 +76,14 @@
                   </div>
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Заполните поля для регистрации</h5>
                   @include('errors.validErrors')
+        
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example17" name = "email" class="form-control form-control-lg" />
+                    <input readonly type="email" id="form2Example17" name = "email" value="{{$request->get('email')}}" class="form-control form-control-lg" />
                     <label class="form-label"  for="form2Example17">Email</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form2Example17" name = "name"  class="form-control form-control-lg" />
+                    <label class="form-label"  for="form2Example17">Ваше имя</label>
                   </div>
                   <div class="form-outline mb-4">
                   <select class="form-select" name="orgid" aria-label="Default select example">

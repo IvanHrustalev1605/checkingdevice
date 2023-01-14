@@ -25,8 +25,9 @@ Route::group([
 Route::get('/', [MainAuthController::class, 'index'])->name('index');
 Route::POST('/', [MainAuthController::class, 'login'])->name('login');
 
+Route::POST('/regEmail', [RegController::class, 'CheckEmail'])->name('CheckUserEmail');
 Route::POST('/reg', [RegController::class, 'add'])->name('addUser');
-Route::get('/registration', [RegController::class, 'index'])->name('indexReg');
+Route::get('/regEmail', [RegController::class, 'indexMail'])->name('indexMailReg');
 
 Route::get('/fogot-password', [ForgotPasswordController::class, 'index'])->name('indexResetPassword');
 Route::post('/fogot-password', [ForgotPasswordController::class, 'store'])->name('ResetPassword');
