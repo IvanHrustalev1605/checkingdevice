@@ -36,15 +36,15 @@
                           </div> 
                           </div>
                       <br>
-                      <div class = "row">
-                      <div class="form-check col-sm-4 m-3">
+                      <div class = "row m-1">
+                      <div class="form-check col-sm-4 m-1">
                                     <input class="form-check-input" type="checkbox" name = "PaidFor" id="PaidFor"  >
                                       <label class="form-check-label" for="PaidFor">
                                         Неоплаченные поставщику
                                       </label>
                                     </div>
                                     <br>
-                                    <div class="form-check col-sm-3 m-3">
+                                    <div class="form-check col-sm-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "customerPaid" id="customerPaid"  >
                                       <label class="form-check-label" for="customerPaid">
                                         Неоплаченные заказчиком
@@ -52,15 +52,15 @@
                                     </div>
                                     <br>
                         </div>
-                        <div class = "row">
-                      <div class="form-check col-sm-4 mb-3 m-3">
+                        <div class = "row m-1">
+                      <div class="form-check col-sm-4 mb-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "PaidForOk" id="PaidForOk"  >
                                       <label class="form-check-label" for="PaidForOk">
                                         Оплаченные поставщику
                                       </label>
                                     </div>
                                     <br>
-                                    <div class="form-check col-sm-3 m-3">
+                                    <div class="form-check col-sm-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "customerPaidOk" id="customerPaidOk"  >
                                       <label class="form-check-label" for="customerPaidOk">
                                         Оплаченные заказчиком
@@ -68,7 +68,7 @@
                                     </div>
                                     <br>
                         </div>
-                      <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
+                      <button type="submit" class="btn btn-info btn-mini m-1 ">Фильтр</button>
                       </form>
          @if(Auth::user()->is_admin == 0)
          <div class="container-fluid">
