@@ -103,6 +103,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('AllUsersIndex')}}">
+              <span data-feather="home"></span>
+               Все сотрудники
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('PriboriIndex')}}">
               <span data-feather="file"></span>
               Приборы

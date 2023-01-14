@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AccountingController;
+use App\Http\Controllers\AllUsersController;
 use App\Http\Controllers\Auth\MainAuthController;
 use App\Http\Controllers\Auth\RegController;
 use App\Http\Controllers\DashBoardController;
@@ -78,7 +79,7 @@ Route::group([
      Route::get('/verifier', [VerifierController::class, 'index'])->name('VerifierIndex');
      Route::get('/verifier/create', [VerifierController::class, 'createForm'])->name('verifierCreateForm');
      Route::POST('/verifier/create', [VerifierController::class, 'create'])->name('verifierCreate');
-
+/*--------------------------------------------------------------*/
      Route::get('/oder', [OdersController::class, 'index'])->name('OderIndex');
      Route::get('/oder/lessinfo', [OdersController::class, 'lessIndex'])->name('lessOdersIndex');
      Route::get('/oder/create', [OdersController::class, 'create'])->name('OderForm');
@@ -88,7 +89,8 @@ Route::group([
      Route::delete('/oder{id}', [OdersController::class, 'delete'])->name('OderDelete');
      Route::get('/oder/update', [OdersController::class, 'updateStatus']);
      Route::get('/oder/sortByObject', [OderFilterController::class, 'sort'])->name('OderSort');
-
+/*----------------------------------------all users--------------------------------------------*/
+     Route::get('/allusers', [AllUsersController::class, 'index'])->name('AllUsersIndex');
 });
 
    
