@@ -59,7 +59,7 @@ public function DiffDate($value){
     $date = Carbon::now();
     $a = Carbon::create($value);
     $diff = $date->diffInDays($a, false);
-    If ($diff <= 7){
+    If ($diff < 0 && $diff <= -7){
         return true;
     } 
 }

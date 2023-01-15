@@ -18,22 +18,23 @@
       <div class="accordion-body">
       <div class="filters-background  p-3">
                   <form class = "form-check-inline" action="{{route('Sort')}}"  method="GET">
-                    <div class="row">
-                    <div class="col-6 col-sm-2">
-                        <label class="form-label">Укажите номер прибора</label>
-                            <input class="form-control form-control-sm" name = "SortDeviceNumber" value = "{{$request->query('SortDeviceNumber')}}"type="text" >
-                          </div>
-                        <div class="col-6 col-sm-3">
-                        <label for="filters">Выбор объект</label>
+                  <div class="col-sm-2 m-2">
+                        <label for="filters">Выберите объект</label>
                             <select id="filters" name = "sort">
                             <option  value="">Выберите...</option>
                                     @foreach ($objects as $obj)
                                 <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
                                     @endforeach
                               </select>
-                        </div>
-                              <div class="col-6 col-sm-2 m-2">
-                                  <label  class="form-label">Укажите год следующей поверки...</label>
+                   </div>
+                    <div class="row m-2">
+                    <div class="col-6 col-sm-2">
+                        <label class="form-label">Укажите номер прибора</label>
+                            <input class="form-control form-control-sm" name = "SortDeviceNumber" value = "{{$request->query('SortDeviceNumber')}}"type="text" >
+                          </div>
+                     
+                              <div class="col-6 col-sm-2">
+                                  <label  class="form-label">Укажите год поверки...</label>
                                 <input class="form-control form-control-sm" name = "Year" value="{{$request->query('Year')}}"  type="text" >
                               </div>
                                 <div class="col-6 col-sm-2">
@@ -42,20 +43,16 @@
                                 
                           </div>  
                     </div>   
-                          <div class="row">
+                          <div class="row m-2">
                                     <div class="col-sm-2">
                                       <label  class="form-label">Дата следующей поверки от...</label>
                                       <input class="form-control form-control-sm" name = "SortDateUp"  value="{{$request->query('SortDateUp')}}"  type="date" >
+                                    </div> 
+                                      <div class="col-sm-2">  
                                       <label  class="form-label">Дата следующей поверки до...</label>
                                       <input class="form-control form-control-sm" name = "SortDateTo"  value="{{$request->query('SortDateTo')}}" type="date" >
                                     </div>
-                                    <div class="col-sm-2">
-                                      <label  class="form-label">Дата текущей поверки от...</label>
-                                      <input class="form-control form-control-sm" name = "SortCurrentDateUp" value="{{$request->query('SortCurrentDateUp')}}" type="date" >
-                                      <label  class="form-label">Дата текущей поверки до...</label>
-                                      <input class="form-control form-control-sm" name = "SortCurrentDateTo"value="{{$request->query('SortCurrentDateTo')}}"  type="date" >
-                                    </div>
-                                    <div class="row">
+                                    <div class="row m-2">
                                     <div class="form-check col-sm-2">
                                       <input class="form-check-input" type="checkbox" name = "sortDESC" id="flexCheckDefault"  >
                                       <label class="form-check-label" for="flexCheckDefault">
@@ -77,15 +74,13 @@
                                     </div>
                       </div>
                       <br>
-                      <button type="submit" class="btn btn-info btn-mini ">Фильтр</button>
+                      <button type="submit" class="btn btn-info btn-mini m-2 ">Фильтр</button>
                       </form>
-                        <div class="reset-filters-parent">
-                          <div class="reset-filters">
+                          <div class="reset-filters m-2">
                               <form method="get" action="{{route('PriboriIndex')}}">
                                  <button type="submit" class="btn btn-info btn-mini ">Сбросить все фильтры</button>
                               </form>
                           </div>
-                        </div>
                         </div>
       </div>
     </div>
@@ -104,7 +99,6 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              
               <th scope="col">Название</th>
               <th scope="col">Номер</th>
               <th scope="col">Объект</th>
@@ -113,14 +107,11 @@
               <th scope="col">Коментарии</th>
               <th scope="col">Кто вносил изменения</th>
               <th scope="col">Действия</th>
-              
             </tr>
           </thead>
           <tbody>
             @foreach($pribors as $pribor)
             <tr>
-              
-              
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
@@ -132,18 +123,17 @@
               <a class="bi bi-pencil-fill" href="{{route('EditPribor', $pribor->PriborID)}}"></a></td>
             </tr>
             @endforeach
-
           </tbody>
         </table>
       </div>
   </div>
 @else
+<!---------------------------------------------------->
 <div class="container">
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              
               <th scope="col">Название</th>
               <th scope="col">Номер</th>
               <th scope="col">Объект</th>
@@ -152,14 +142,11 @@
               <th scope="col">Коментарии</th>
               <th scope="col">Кто вносил изменения</th>
               <th scope="col">Действия</th>
-              
             </tr>
           </thead>
           <tbody>
             @foreach($pribors as $pribor)
             <tr>
-              
-              
               <td>{{$pribor->name}}</td>
               <td>{{$pribor->number}}</td>
               <td>{{$pribor->Objects->ObjName}}</td>
@@ -175,7 +162,6 @@
                           </td>
             </tr>
             @endforeach
-
           </tbody>
         </table>
       </div>

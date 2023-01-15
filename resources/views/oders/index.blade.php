@@ -17,11 +17,6 @@
       <button type="submit" class="btn btn-info">Добавить</button><hr>
       </form>
       </div>
-      <!--<div class="col-3">
-      <form action="{{route('lessOdersIndex')}}" method="GET">
-      <button type="submit" class="btn btn-info">Cкрыть лишние столбцы</button><hr>
-      </form>
-      </div>-->
        <div class="col-sm-2">
                <form method="get" action="{{route('OderIndex')}}">
                           <button type="submit" class="btn btn-info btn-mini ">Сбросить все фильтры</button><hr>
@@ -95,6 +90,11 @@
           </thead>
           <tbody>
             @foreach($oders as $oder)
+            @if($oder->installed == 0)
+            <tr >
+              @else
+              <tr class="table-success">
+                @endif
               <td>{{$oder->Object->ObjName}}</td>
               <td>{{$oder->name}}</td>
               <td>{{$oder->where}}</td>
@@ -125,6 +125,7 @@
               <td><a class="bi bi-pencil-fill" href="{{route('OderEdit', $oder->odid)}}"></a></td>
             </tr>
             @endforeach
+            
           </tbody>
         </table>
       </div>
@@ -151,7 +152,12 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($oders as $oder)
+          @foreach($oders as $oder)
+            @if($oder->installed == 0)
+            <tr >
+              @else
+              <tr class="table-success">
+                @endif
               <td>{{$oder->Object->ObjName}}</td>
               <td>{{$oder->name}}</td>
               <td>{{$oder->where}}</td>

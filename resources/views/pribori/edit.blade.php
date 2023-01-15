@@ -24,17 +24,6 @@
     <label for="inputCity" class="form-label">Дата следующей поверки</label>
     <input type="date" name="nextDate" value="{{ $pribor->nextDate }}" class="form-control" id="inputCity" placeholder="Дата в формате гггг-мм-дд">
   </div>
-
-  <div class="col-md-12">
-  <label for="verifiers" class="form-label">Выберите где сейчас прибор</label>
-  <select id="verifiers" name = "VID" >
-                              <option value="{{$pribor->Verifier->VID}}">{{$pribor->Verifier->name}}</option>  
-                              @foreach($verifiers as $verifier)
-                                <option  value="{{$verifier->VID}}">{{$verifier->name}}</option>   
-                                @endforeach  
-                              </select>
-  </div>
-
   <div class="col-12">
   <label for="inputAddress" class="form-label">Комментарии</label>
     <textarea class="form-control" name="comments">{{$pribor->comments}}</textarea>
