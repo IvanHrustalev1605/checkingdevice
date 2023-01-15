@@ -68,6 +68,46 @@
                                     </div>
                                     <br>
                         </div>
+                        <div class = "row  m-1">
+                      <div class="form-check col-sm-4 pay mb-3 m-1">
+                                    <input class="form-check-input" type="checkbox" name = "osid1" id="osid1"  >
+                                      <label class="form-check-label" for="osid1">
+                                        Нужно заказать
+                                      </label>
+                                    </div>
+                                    <br>
+                                    <div class="form-check pay col-sm-3 m-1">
+                                    <input class="form-check-input" type="checkbox" name = "osid3" id="osid3"  >
+                                      <label class="form-check-label" for="osid3">
+                                        Не отправлено поставщиком
+                                      </label>
+                                    </div>
+                                    <div class="form-check pay col-sm-3 m-1">
+                                    <input class="form-check-input" type="checkbox" name = "osid4" id="osid4"  >
+                                      <label class="form-check-label" for="osid4">
+                                        Нужно забрать
+                                      </label>
+                                    </div>
+                                    <div class="form-check pay col-sm-3 m-1">
+                                    <input class="form-check-input" type="checkbox" name = "osid5" id="osid5"  >
+                                      <label class="form-check-label" for="osid5">
+                                        В офисе
+                                      </label>
+                                    </div>
+                                    <div class="form-check pay col-sm-3 m-1">
+                                    <input class="form-check-input" type="checkbox" name = "osid6" id="osid6"  >
+                                      <label class="form-check-label" for="osid6">
+                                       Устанавливается на объекте
+                                      </label>
+                                    </div>  
+                                    <div class="form-check pay col-sm-3 m-1">
+                                    <input class="form-check-input" type="checkbox" name = "osid7" id="osid7"  >
+                                      <label class="form-check-label" for="osid7">
+                                        Установлено на объекте
+                                      </label>
+                                    </div>
+                                    <br>
+                        </div>
                       <button type="submit" class="btn btn-info btn-mini m-1 ">Фильтр</button>
                       </form>
          @if(Auth::user()->is_admin == 0)
@@ -108,8 +148,9 @@
               @else
               <td>{{$oder->installed}}</td>
               @endif
-             
-              @IF($oder->DiffDate($oder->delivery))
+              @if($oder->OderStatus->osid > 4)
+              <td>{{$oder->delivery}}</td>)
+              @elseif($oder->DiffDate($oder->delivery))
               <td><div class = "bg-warning">{{$oder->delivery}}</div></td>
               @else
               <td><div class = "bg-info bg-gradient">{{$oder->delivery}}</div></td>
@@ -181,8 +222,9 @@
               @else
               <td>{{$oder->installed}}</td>
               @endif
-             
-              @IF($oder->DiffDate($oder->delivery))
+              @if($oder->OderStatus->osid > 4)
+              <td>{{$oder->delivery}}</td>)
+              @elseif($oder->DiffDate($oder->delivery))
               <td><div class = "bg-warning">{{$oder->delivery}}</div></td>
               @else
               <td><div class = "bg-info bg-gradient">{{$oder->delivery}}</div></td>
