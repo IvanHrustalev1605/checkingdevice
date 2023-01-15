@@ -4,7 +4,7 @@
 <div class="row justify-content-evenly">
 @foreach($users as $user)
     <div class="col-sm-3">
-    <div class="card text-dark bg-light mb-3" style="max-width: 10rem;">
+    <div class="card text-dark bg-light mb-3" style="max-width: 10rem; max-height: 10rem">
         <a href="{{route('userIndex', $user->uid)}}">
             <img src="/public/storage/{!!$user->avatar!!}" class="card-img-top" alt="...">
             <div class="card-header">{{$user->post}}</div>
