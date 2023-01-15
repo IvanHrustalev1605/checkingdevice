@@ -6,11 +6,11 @@ namespace App\Models\Filters\Oders;
 use App\Filters\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 
-class osid5 implements Filterable{
+class Osid1 implements Filterable{
 
     public static function apply(Builder $builder, $value)
     {
-        return $builder->where('osid','LIKE', "5");
+        return $builder->where('osid','LIKE', "1");
 
     }
 }

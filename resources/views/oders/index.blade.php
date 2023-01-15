@@ -70,38 +70,38 @@
                         </div>
                         <div class = "row  m-3">
                       <div class="form-check col-sm-4 pay mb-3 m-1">
-                                    <input class="form-check-input" type="checkbox" name = "osid1" id="osid1"  >
+                                    <input class="form-check-input" type="checkbox" name = "Osid1" id="osid1"  >
                                       <label class="form-check-label" for="osid1">
                                         Нужно заказать
                                       </label>
                                     </div>
                                     <br>
                                     <div class="form-check pay col-sm-3 m-1">
-                                    <input class="form-check-input" type="checkbox" name = "osid3" id="osid3"  >
+                                    <input class="form-check-input" type="checkbox" name = "Osid3" id="osid3"  >
                                       <label class="form-check-label" for="osid3">
                                         Не отправлено поставщиком
                                       </label>
                                     </div>
                                     <div class="form-check pay col-sm-3 m-1">
-                                    <input class="form-check-input" type="checkbox" name = "osid4" id="osid4"  >
+                                    <input class="form-check-input" type="checkbox" name = "Osid4" id="osid4"  >
                                       <label class="form-check-label" for="osid4">
                                         Нужно забрать
                                       </label>
                                     </div>
                                     <div class="form-check pay col-sm-3 m-1">
-                                    <input class="form-check-input" type="checkbox" name = "osid5" id="osid5"  >
+                                    <input class="form-check-input" type="checkbox" name = "Osid5" id="osid5"  >
                                       <label class="form-check-label" for="osid5">
                                         В офисе
                                       </label>
                                     </div>
                                     <div class="form-check pay col-sm-3 m-1">
-                                    <input class="form-check-input" type="checkbox" name = "osid6" id="osid6"  >
+                                    <input class="form-check-input" type="checkbox" name = "Osid6" id="osid6"  >
                                       <label class="form-check-label" for="osid6">
                                        Устанавливается на объекте
                                       </label>
                                     </div>  
                                     <div class="form-check pay col-sm-3 m-1">
-                                    <input class="form-check-input" type="checkbox" name = "osid7" id="osid7"  >
+                                    <input class="form-check-input" type="checkbox" name = "Osid7" id="osid7"  >
                                       <label class="form-check-label" for="osid7">
                                         Установлено на объекте
                                       </label>
