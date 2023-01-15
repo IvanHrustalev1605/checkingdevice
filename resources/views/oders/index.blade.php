@@ -36,7 +36,7 @@
                           </div> 
                           </div>
                       <br>
-                      <div class = "row  m-1">
+                      <div class = "row  m-3">
                       <div class="form-check pay col-sm-4 m-1">
                                     <input class="form-check-input" type="checkbox" name = "PaidFor" id="PaidFor"  >
                                       <label class="form-check-label" for="PaidFor">
@@ -52,7 +52,7 @@
                                     </div>
                                     <br>
                         </div>
-                        <div class = "row  m-1">
+                        <div class = "row  m-3">
                       <div class="form-check col-sm-4 pay mb-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "PaidForOk" id="PaidForOk"  >
                                       <label class="form-check-label" for="PaidForOk">
@@ -60,7 +60,7 @@
                                       </label>
                                     </div>
                                     <br>
-                                    <div class="form-check pay col-sm-3 m-1">
+                                    <div class="form-check pay col-sm-3  m-1">
                                     <input class="form-check-input" type="checkbox" name = "customerPaidOk" id="customerPaidOk"  >
                                       <label class="form-check-label" for="customerPaidOk">
                                         Оплаченные заказчиком
@@ -68,7 +68,7 @@
                                     </div>
                                     <br>
                         </div>
-                        <div class = "row  m-1">
+                        <div class = "row  m-3">
                       <div class="form-check col-sm-4 pay mb-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "osid1" id="osid1"  >
                                       <label class="form-check-label" for="osid1">
