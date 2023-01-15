@@ -8,6 +8,7 @@
         }
       }
   </style>
+  <div class="container-fluid">
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 <h1 class="h2">Заказы</h1>
       </div>
@@ -110,6 +111,7 @@
                         </div>
                       <button type="submit" class="btn btn-info btn-mini m-1 ">Фильтр</button>
                       </form>
+  </div>
          @if(Auth::user()->is_admin == 0)
          <div class="container-fluid">
       <div class="table-responsive">
