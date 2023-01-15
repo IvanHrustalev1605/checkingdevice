@@ -1,11 +1,18 @@
 @extends('layout')
 @section('content')
-
+<style>
+@media (max-width: 400px) {
+        .pay {
+          padding: 1px;
+          margin: 1px;
+        }
+      }
+  </style>
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 <h1 class="h2">Заказы</h1>
       </div>
       <div class="row">
-        <div class="col-2">
+        <div class="col-sm-2">
       <form action="{{route('OderForm')}}" method="GET">
       <button type="submit" class="btn btn-info">Добавить</button><hr>
       </form>
@@ -15,13 +22,11 @@
       <button type="submit" class="btn btn-info">Cкрыть лишние столбцы</button><hr>
       </form>
       </div>-->
-                        <div class="col-5">
-                        
-                              <form method="get" action="{{route('OderIndex')}}">
-                                 <button type="submit" class="btn btn-info btn-mini ">Сбросить все фильтры</button><hr>
-                              </form>
-                          
-                        </div>
+       <div class="col-sm-2">
+               <form method="get" action="{{route('OderIndex')}}">
+                          <button type="submit" class="btn btn-info btn-mini ">Сбросить все фильтры</button><hr>
+                 </form>
+      </div>
       </div>
       <form class = "form-check-inline" action="{{route('OderSort')}}"  method="GET">
       <div class="row">
@@ -36,15 +41,15 @@
                           </div> 
                           </div>
                       <br>
-                      <div class = "row m-1">
-                      <div class="form-check col-sm-4 m-1">
+                      <div class = "row  m-1">
+                      <div class="form-check pay col-sm-4 m-1">
                                     <input class="form-check-input" type="checkbox" name = "PaidFor" id="PaidFor"  >
                                       <label class="form-check-label" for="PaidFor">
                                         Неоплаченные поставщику
                                       </label>
                                     </div>
                                     <br>
-                                    <div class="form-check col-sm-3 m-1">
+                                    <div class="form-check pay col-sm-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "customerPaid" id="customerPaid"  >
                                       <label class="form-check-label" for="customerPaid">
                                         Неоплаченные заказчиком
@@ -52,15 +57,15 @@
                                     </div>
                                     <br>
                         </div>
-                        <div class = "row m-1">
-                      <div class="form-check col-sm-4 mb-3 m-1">
+                        <div class = "row  m-1">
+                      <div class="form-check col-sm-4 pay mb-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "PaidForOk" id="PaidForOk"  >
                                       <label class="form-check-label" for="PaidForOk">
                                         Оплаченные поставщику
                                       </label>
                                     </div>
                                     <br>
-                                    <div class="form-check col-sm-3 m-1">
+                                    <div class="form-check pay col-sm-3 m-1">
                                     <input class="form-check-input" type="checkbox" name = "customerPaidOk" id="customerPaidOk"  >
                                       <label class="form-check-label" for="customerPaidOk">
                                         Оплаченные заказчиком

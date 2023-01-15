@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
 
-<div class="row m-4 justify-content-center">
+<div class="row m-4 justify-content-evenly">
 @foreach($users as $user)
-    <div class="col-sm-4">
-        <div class="card text-center" style="width: 18rem;">
+    <div class="col-sm-4 m-2">
+        <div class="card text-center" style="width: 10rem;">
         <a href="{{route('userIndex', $user->uid)}}">
             <img src="/public/storage/{!!$user->avatar!!}" class="card-img-top" alt="...">
                 <div class="card-body">
