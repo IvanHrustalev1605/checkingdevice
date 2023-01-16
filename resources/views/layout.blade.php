@@ -94,6 +94,7 @@
   background-color: rgba(0,0,0, 0.9);
   overflow-y: hidden;
   transition: 0.5s;
+  margin-top: 15px;
 }
 #nav-ul {
   position: relative;
@@ -102,11 +103,9 @@
   text-align: center; /* Центрированный текст/ссылки */
   margin-top: 30px; /* 30px верхнее поле, чтобы избежать конфликта с кнопкой закрытия на небольших экранах */
 }
-.nav-left .closebtn {
+.row-left .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+  font-size: 40px;
 }
   }
 
@@ -141,7 +140,7 @@ function closeNav() {
       </div>
 </nav>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row row-left">
   <div class="openNav btn btn-info" onclick="openNav()">Меню</div>
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-block bg-light sidebar collapse nav-left">
       <div class="position-sticky pt-3">
