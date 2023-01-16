@@ -24,7 +24,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Название оборудования</label>
-    <input type="text" name="name" class="form-control" id="inputEmail4">
+    <input type="text" name="name" class="form-control" id="inputEmail4" value="{{old('name')}}">
   </div>
     <input type="hidden" name="uid" value="{{Auth::user()->uid}}" class="form-control" id="inputEmail4">
   <div class="col-md-6">

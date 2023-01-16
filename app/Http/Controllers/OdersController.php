@@ -26,11 +26,8 @@ class OdersController extends Controller
             'name'=>'required|',
             'where' => 'required',
             'when' => 'required',
-            'whenPaid' =>'required',
-            'paidNumber' =>'required',
             'delivery' =>'required',
             'osid' =>'required',
-            'customerPaid' =>'required',
         ],
         [
             'name.required' => 'Заполните название',
@@ -55,11 +52,8 @@ class OdersController extends Controller
             'name'=>'required|',
             'where' => 'required',
             'when' => 'required',
-            'whenPaid' =>'required',
-            'paidNumber' =>'required',
             'delivery' =>'required',
             'osid' =>'required',
-            'customerPaid' =>'required',
         ],
         [
             'name.required' => 'Заполните название',
