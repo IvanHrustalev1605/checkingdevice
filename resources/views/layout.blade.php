@@ -69,7 +69,13 @@
       @media (min-width: 700px) {
      .prose {display: block;}
 }
-    </style>
+
+
+
+  </style>
+    <script>
+
+      </script>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/public/css/footer.css">
     <link rel="stylesheet" href="/public/css/nav.css">
@@ -81,19 +87,25 @@
     <link rel="stylesheet" href="/public/css/userpage.css">
     <link href="/public/css/examples/dashboard.css" rel="stylesheet"></head>
 <body>
+
+
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class="navbar navbar-dark">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://ergogaz.ru/">{{Auth::user()->organisation->name}}</a>
       <a class="nav-link" href="{{route('logout')}}">Выйти</a>
       </div>
 </nav>
-
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-block bg-light sidebar collapse">
+  <div class="openNav btn btn-info" onclick="openNav()">Меню</div>
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-block bg-light sidebar collapse nav-left">
       <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
+      
+     
+        <ul id="nav-ul" class="nav flex-column">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <li class="nav-item">
+            
             <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">
               <span data-feather="home"></span>
                Личный кабинет организации
@@ -170,6 +182,14 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-179173139-1');
+  function openNav() {
+  document.getElementById("sidebarMenu").style.height = "100%";
+}
+
+/* Закрыть */
+function closeNav() {
+  document.getElementById("sidebarMenu").style.height = "0%";
+}
 </script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
