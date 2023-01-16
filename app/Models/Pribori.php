@@ -20,7 +20,6 @@ class Pribori extends Model
     
     protected $fillable = ['name',
                            'number',
-                           'currentDate',
                            'nextDate',
                            'comments',
                              'VID',

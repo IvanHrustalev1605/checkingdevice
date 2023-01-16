@@ -56,6 +56,20 @@ class PriboriController extends Controller
         return view('pribori.edit', ['pribor' => $pribor, 'objects' => $objects, 'verifiers' => $verifiers]);
     }
     public function update(Request $request, $id){
+        Validator::make($request->all(),[
+            'name' => 'required',
+            'number'=>'required|',
+            'nextDate' => 'required',
+            'VID' => 'required',
+            'ObjID' =>'required',
+        ],
+        [
+            'name.required' => 'Заполните имя!',
+            'surname.required' => 'Заполните номер прибора!',
+            'nextDate.required' => 'Укажите дату следующей поверки!',
+            'VID.required' => 'Выберите где сейчас прибор',
+            'ObjID.required' => 'Выьерите чей прибор',
+        ])->validate();
         $pribor = Pribori::find($id);
         $pribor->edit($request->all());
         return redirect()->route('PriboriIndex');

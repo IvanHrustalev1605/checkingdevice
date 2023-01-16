@@ -6,6 +6,7 @@ use App\Models\Objects;
 use App\Models\Oders;
 use App\Models\OderStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OdersController extends Controller
 {
@@ -14,17 +15,32 @@ class OdersController extends Controller
         $objects = Objects::all();
         return view('oders.index', ['oders' => $oders, 'objects' => $objects]);
     }
-    /*public function lessIndex(){
-        $oders = Oders::all();
-        $objects = Objects::all();
-        return view('oders.lessindex', ['oders' => $oders, 'objects' => $objects]);
-    }*/
     public function create(){
         $objects = Objects::all();
         $oderstatus = OderStatus::all();
         return view('oders.create', ['objects' => $objects, 'oderstatus' => $oderstatus]);
     }
     public function store(Request $request){
+        Validator::make($request->all(),[
+            'ObjID' => 'required',
+            'name'=>'required|',
+            'where' => 'required',
+            'when' => 'required',
+            'whenPaid' =>'required',
+            'paidNumber' =>'required',
+            'delivery' =>'required',
+            'osid' =>'required',
+            'installed' =>'required',
+            'customerPaid' =>'required',
+        ],
+        [
+            'name.required' => 'Заполните название',
+            'ObjID.required' => 'Выберите чей заказ',
+            'where.required' => 'Укажите где заказано',
+            'when.required' => 'Укажите дату заказа',
+            'osid.required' => 'Выберите статус заказа',
+            'delivery.required' => 'Укажите примерную дату поставки',
+        ])->validate();
         Oders::add($request->all());
         return redirect()->route('OderIndex');
     }
@@ -35,6 +51,26 @@ class OdersController extends Controller
         return view('oders.edit', ['objects' => $objects, 'oder' => $oder, 'oderstatus' => $oderstatus]);
     }
     public function update(Request $request, $id){
+        Validator::make($request->all(),[
+            'ObjID' => 'required',
+            'name'=>'required|',
+            'where' => 'required',
+            'when' => 'required',
+            'whenPaid' =>'required',
+            'paidNumber' =>'required',
+            'delivery' =>'required',
+            'osid' =>'required',
+            'installed' =>'required',
+            'customerPaid' =>'required',
+        ],
+        [
+            'name.required' => 'Заполните название',
+            'ObjID.required' => 'Выберите чей заказ',
+            'where.required' => 'Укажите где заказано',
+            'when.required' => 'Укажите дату заказа',
+            'osid.required' => 'Выберите статус заказа',
+            'delivery.required' => 'Укажите примерную дату поставки',
+        ])->validate();
         $oder = Oders::find($id);
         $oder->edit($request->all());
         return redirect()->route('OderIndex');
