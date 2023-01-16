@@ -30,7 +30,6 @@ class OdersController extends Controller
             'paidNumber' =>'required',
             'delivery' =>'required',
             'osid' =>'required',
-            'installed' =>'required',
             'customerPaid' =>'required',
         ],
         [
@@ -60,7 +59,6 @@ class OdersController extends Controller
             'paidNumber' =>'required',
             'delivery' =>'required',
             'osid' =>'required',
-            'installed' =>'required',
             'customerPaid' =>'required',
         ],
         [
