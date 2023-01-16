@@ -17,6 +17,16 @@
 <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src = "https://unpkg.com/@popperjs/core@2"></script>
+<script>
+function openNav() {
+  document.getElementById("sidebarMenu").style.height = "100%";
+}
+
+/* Закрыть */
+function closeNav() {
+  document.getElementById("sidebarMenu").style.height = "0%";
+}
+      </script>
 <!-- Font Awesome -->
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -73,9 +83,7 @@
 
 
   </style>
-    <script>
-
-      </script>
+    
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/public/css/footer.css">
     <link rel="stylesheet" href="/public/css/nav.css">
@@ -182,14 +190,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-179173139-1');
-  function openNav() {
-  document.getElementById("sidebarMenu").style.height = "100%";
-}
-
-/* Закрыть */
-function closeNav() {
-  document.getElementById("sidebarMenu").style.height = "0%";
-}
+  
 </script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
