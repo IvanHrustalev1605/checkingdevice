@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+@include('errors.validErrors')
 <form class="row g-3" action = "{{route('UpdatePribor', $pribor->PriborID)}}" method = "post">
 {{csrf_field()}}
   <div class="col-md-6">

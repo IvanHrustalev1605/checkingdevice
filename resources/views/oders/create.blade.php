@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+@include('errors.validErrors')
 <br>
 <form class="row g-3" action = "{{route('OderAdd')}}" method = "POST">
     {{csrf_field()}}

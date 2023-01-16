@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-
+@include('errors.validErrors')
 <form class="row g-3" action = "{{route('OderUpdate', $oder->odid)}}" method = "POST">
     {{csrf_field()}}
     <div class="col-md-6">
