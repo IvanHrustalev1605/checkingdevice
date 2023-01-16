@@ -17,16 +17,6 @@
 <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src = "https://unpkg.com/@popperjs/core@2"></script>
-<script>
-function openNav() {
-  document.getElementById("sidebarMenu").style.height = "100%";
-}
-
-/* Закрыть */
-function closeNav() {
-  document.getElementById("sidebarMenu").style.height = "0%";
-}
-      </script>
 <!-- Font Awesome -->
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -80,10 +70,57 @@ function closeNav() {
      .prose {display: block;}
 }
 
-
+@media screen and (min-width:699px) {
+  .closebtn {
+    visibility: hidden;
+    display: none;
+  }
+  .openNav{
+    visibility: hidden;
+    display: none;
+  }
+}
+@media screen and (max-width:700px){
+  .nav-left {overflow-y: hidden;}
+  .nav-left a {font-size: 20px}
+  .nav-left{
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+#nav-ul {
+  position: relative;
+  top: 25%; /* 25% сверху */
+  width: 100%; /* 100% ширина */
+  text-align: center; /* Центрированный текст/ссылки */
+  margin-top: 30px; /* 30px верхнее поле, чтобы избежать конфликта с кнопкой закрытия на небольших экранах */
+}
+.nav-left .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+  }
 
   </style>
-    
+    <script>
+function openNav() {
+  document.getElementById("sidebarMenu").style.height = "100%";
+}
+
+/* Закрыть */
+function closeNav() {
+  document.getElementById("sidebarMenu").style.height = "0%";
+}
+      </script>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/public/css/footer.css">
     <link rel="stylesheet" href="/public/css/nav.css">
