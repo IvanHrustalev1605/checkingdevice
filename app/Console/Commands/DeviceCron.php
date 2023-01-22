@@ -5,9 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Mail\Test\MailCron;
 use App\Models\Pribori;
-use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
