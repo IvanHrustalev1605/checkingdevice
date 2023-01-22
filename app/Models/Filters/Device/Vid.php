@@ -6,7 +6,7 @@ namespace App\Models\Filters\Device;
 use App\Filters\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 
-class VID implements Filterable{
+class Vid implements Filterable{
 
     public static function apply(Builder $builder, $value)
     {
