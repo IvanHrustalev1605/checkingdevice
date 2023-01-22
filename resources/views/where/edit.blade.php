@@ -4,10 +4,10 @@
     {{csrf_field()}}
   <div class="col-md-6">
     <label for="verifiers" class="form-label">Где находится</label>
-    <select id="verifiers" name = "VID"  >
-                              <option  value="{{$w->Verifier->VID}}">{{$w->Verifier->name}}</option>    
+    <select id="verifiers" name = "Vid"  >
+                              <option  value="{{$w->Verifier->Vid}}">{{$w->Verifier->name}}</option>    
                               @foreach($verifiers as $verifier)
-                                <option  value="{{$verifier->VID}}">{{$verifier->name}}</option>   
+                                <option  value="{{$verifier->Vid}}">{{$verifier->name}}</option>   
                                 @endforeach  
                               </select>
   </div>

@@ -11,7 +11,7 @@ class Verifier extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'VID';
+    protected $primaryKey = 'Vid';
 
     public function Device(){
         return $this->hasMany(Pribori::class, 'PriborID');

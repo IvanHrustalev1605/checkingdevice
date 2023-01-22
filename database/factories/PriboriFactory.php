@@ -28,7 +28,7 @@ class PriboriFactory extends Factory
             'currentDate' => $this->faker->date,
             'nextDate' => $this->faker->date,
             'comments' => $this->faker->text(37),
-            'VID' => Verifier::get()->random()->VID
+            'Vid' => Verifier::get()->random()->Vid
         ];
     }
 }

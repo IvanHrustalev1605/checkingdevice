@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('wheres', function (Blueprint $table) {
             $table->id('PriborID');
-            $table->string('VID')->nullable();
+            $table->string('Vid')->nullable();
             $table->string('delivered')->nullable();
             $table->string('takenAway')->nullable();
             $table->string('status')->nullable();

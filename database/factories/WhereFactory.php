@@ -22,7 +22,7 @@ class WhereFactory extends Factory
     {
         return [
             'PriborID' => Pribori::get()->random()->PriborID,
-            'VID' => Verifier::get()->random()->VID,
+            'Vid' => Verifier::get()->random()->Vid,
             'delivered' => $this->faker->date(),
             'takenAway' => $this->faker->date(),
         ];

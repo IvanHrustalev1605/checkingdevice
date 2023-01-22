@@ -10,7 +10,7 @@ class Vid implements Filterable{
 
     public static function apply(Builder $builder, $value)
     {
-        return $builder->where('VID', 'LIKE', 8);
+        return $builder->where('Vid', 'LIKE', 8);
 
     }
 }

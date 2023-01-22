@@ -22,7 +22,7 @@ class Pribori extends Model
                            'number',
                            'nextDate',
                            'comments',
-                             'VID',
+                             'Vid',
                             'ObjID',
                             'uid'];
 
@@ -33,7 +33,7 @@ class Pribori extends Model
         return $this->belongsTo(Where::class, 'PriborID');
     }
     public function Verifier(){
-        return $this->belongsTo(Verifier::class, 'VID');
+        return $this->belongsTo(Verifier::class, 'Vid');
     }
     public function Users(){
         return $this->belongsTo(User::class, 'uid');

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('verifier', function (Blueprint $table) {
-            $table->id('VID');
+            $table->id('Vid');
             $table->text('name')->nullable();
             $table->text('adress')->nullable();
             $table->integer('phone')->nullable();

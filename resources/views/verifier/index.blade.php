@@ -20,9 +20,9 @@
           <tbody>
             @foreach($verifiers as $verifier)
             <tr>
-              @if($verifier->VID == 5 ||$verifier->VID == 6 ||
-                  $verifier->VID == 7 ||$verifier->VID == 8 ||
-                  $verifier->VID == 9)
+              @if($verifier->Vid == 5 ||$verifier->Vid == 6 ||
+                  $verifier->Vid == 7 ||$verifier->Vid == 8 ||
+                  $verifier->Vid == 9)
               @else
               <td>{{$verifier->name}}</td>
               <td>{{$verifier->adress}}</td>

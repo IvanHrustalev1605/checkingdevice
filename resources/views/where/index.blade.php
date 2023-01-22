@@ -22,7 +22,7 @@
           <tbody>
             <tr>
               <td>{{$w->Pribor->name}}</td>
-              @IF($w->Verifier->VID === 5)
+              @IF($w->Verifier->Vid === 5)
               <td>Установлен на объекте</td>
               @else
               <td>{{$w->Verifier->name}}
@@ -31,7 +31,7 @@
               @endif
               <td>{{$w->delivered}}</td>
               <td>{{$w->takenAway}}</td>  
-              @IF($w->Verifier->VID === 5)
+              @IF($w->Verifier->Vid === 5)
               <td>Поверен, установлен</td>
               @else  
               <td>{{$w->status}}</td>

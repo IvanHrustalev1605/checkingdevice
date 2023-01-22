@@ -31,21 +31,21 @@ class PriboriController extends Controller
             'name' => 'required',
             'number'=>'required|',
             'ObjID' => 'required',
-            'VID' => 'required',
+            'Vid' => 'required',
             'nextDate' => 'required|'
         ],
         [
             'name.required' => 'Заполните название!',
             'number.required' => 'Заполните номер!',
             'ObjID.required' => 'Выеберите чей прибор!',
-            'VID.required' => 'Укажите где он сейчас!',
+            'Vid.required' => 'Укажите где он сейчас!',
             'nextDate.required' => 'Заполните Дату следующей поверки!',
         ])->validate();
 
         $device = Pribori::add($request->all());
         DB::table('wheres')->insert(
             ['PriborID' => $device->PriborID,
-            'VID' => $device->VID]
+            'Vid' => $device->Vid]
           );
         return redirect()->route('PriboriIndex')->with('messageOK', 'Прибор добавлен!');
     }

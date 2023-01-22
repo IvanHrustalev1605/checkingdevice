@@ -41,7 +41,7 @@ class DeviceCron extends Command
         $arrNames = [];
         $devices = Pribori::all();
         foreach($devices as $device){
-            If(($now->diffInMonths($device->nextDate)) < 1 && ($device->VID == 5)){
+            If(($now->diffInMonths($device->nextDate)) < 1 && ($device->Vid == 5)){
            array_push($arrObjName,$device->Objects->ObjName );
            array_push($arrNumber,$device->number );
            array_push($arrNames,$device->name );

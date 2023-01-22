@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('wheres', function (Blueprint $table) {
-            $table->string('VID');
+            $table->string('Vid');
                       });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('wheres', function (Blueprint $table) {
-            $table->string('VID');
+            $table->string('Vid');
         });
     }
 };

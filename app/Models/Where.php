@@ -15,7 +15,7 @@ class Where extends Model
     protected $primaryKey = 'PriborID';
     
    protected $fillable = [
-        'VID',
+        'Vid',
         'delivered',
         'takenAway',
         'status'
@@ -25,7 +25,7 @@ class Where extends Model
         return $this->hasOne(Pribori::class, 'PriborID');
     }
     public function Verifier(){
-        return $this->belongsTo(Verifier::class, 'VID');
+        return $this->belongsTo(Verifier::class, 'Vid');
     }
     public function edit($fields){
         $this->fill($fields);

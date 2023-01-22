@@ -28,10 +28,10 @@
 
   <div class="col-md-12">
   <label for="verifiers" class="form-label">Выберите где сейчас прибор</label>
-  <select id="verifiers" name = "VID" >
+  <select id="verifiers" name = "Vid" >
                               <option  value="5">Установлен на объекте</option>    
                               @foreach($verifiers as $verifier)
-                                <option  value="{{$verifier->VID}}">{{$verifier->name}}</option>   
+                                <option  value="{{$verifier->Vid}}">{{$verifier->name}}</option>   
                                 @endforeach  
                               </select>
   </div>

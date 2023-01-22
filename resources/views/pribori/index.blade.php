@@ -72,8 +72,8 @@
                                       </label>
                                     </div>
                                     <div class="form-check col-sm-2">
-                                    <input class="form-check-input" type="checkbox" name = "Vid" id="VID"  >
-                                      <label class="form-check-label" for="VID">
+                                    <input class="form-check-input" type="checkbox" name = "Vid" id="Vid"  >
+                                      <label class="form-check-label" for="Vid">
                                         Которые лежат в офисе и нужно отвезти в поверку
                                       </label>
                                     </div>
