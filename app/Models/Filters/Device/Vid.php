@@ -10,7 +10,7 @@ class VID implements Filterable{
 
     public static function apply(Builder $builder, $value)
     {
-        return $builder->orderBy('VID', 'LIKE', 8);
+        return $builder->where('VID', 'LIKE', 8);
 
     }
 }
