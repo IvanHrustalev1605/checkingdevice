@@ -3,7 +3,10 @@
 @foreach ($DeviceAll as $device)
    @foreach ($device as $key => $el)
       @foreach ($el as $e => $k)
-     ## <div><p><b>Объект:</b> <u>{{ $key }}</u>, <b>номер:</b> <u>{{ $e }}</u>, <b>название:</b> <u>{{ $k }}</u></p></div>##
+         @foreach ($k as $a=>$b)
+         
+   ##<div><p><b>Объект:</b> <u>{{ $key }}</u>, <b>номер:</b> <u>{{ $a }}</u>, <b>название:</b> <u>{{ $b }}</u> <b>комментарий</b> <u>{{$e}}</u></p></div>
+         @endforeach
       @endforeach
    @endforeach
 @endforeach
