@@ -50,7 +50,7 @@ class OdersCronMail extends Command
            $result[] = [$ObjName => $arrOderName[$key]] ;
        }
        If(isset($result)){
-        Mail::to('khrustalev16@gmail.com')->send(new OdersMailCron( $result));
+        Mail::to('ergogaz@gmail.com')->send(new OdersMailCron( $result));
              return Log::info(1);
         }
         else return Log::info(0);
