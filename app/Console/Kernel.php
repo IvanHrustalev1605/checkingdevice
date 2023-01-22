@@ -5,10 +5,10 @@ namespace App\Console;
 
 
 use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Foundation\Console\Kernel;
+use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 
-class Kernell extends Kernel
+class Kernel extends ConsoleKernel
 {
     protected $command =[
         TestCron::class
