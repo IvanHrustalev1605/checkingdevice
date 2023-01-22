@@ -60,14 +60,12 @@ class PriboriController extends Controller
             'name' => 'required',
             'number'=>'required|',
             'nextDate' => 'required',
-            'VID' => 'required',
             'ObjID' =>'required',
         ],
         [
             'name.required' => 'Заполните имя!',
-            'surname.required' => 'Заполните номер прибора!',
+            'number.required' => 'Заполните номер прибора!',
             'nextDate.required' => 'Укажите дату следующей поверки!',
-            'VID.required' => 'Выберите где сейчас прибор',
             'ObjID.required' => 'Выьерите чей прибор',
         ])->validate();
         $pribor = Pribori::find($id);
