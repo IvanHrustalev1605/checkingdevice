@@ -54,21 +54,27 @@
                                     </div>
                                     <div class="row m-2">
                                     <div class="form-check col-sm-2">
-                                      <input class="form-check-input" type="checkbox" name = "sortDESC" id="flexCheckDefault"  >
-                                      <label class="form-check-label" for="flexCheckDefault">
+                                      <input class="form-check-input" type="checkbox" name = "sortDESC" id="sortDESC"  >
+                                      <label class="form-check-label" for="sortDESC">
                                         По убыванию
                                       </label>
                                     </div>
                                     <div class="form-check col-sm-2">
-                                      <input class="form-check-input" type="checkbox" name = "sortASC"  id="flexCheckDefault"  >
-                                      <label class="form-check-label" for="flexCheckDefault">
+                                      <input class="form-check-input" type="checkbox" name = "sortASC"  id="sortASC"  >
+                                      <label class="form-check-label" for="sortASC">
                                         По возрастанию
                                       </label>
                                     </div>
                                     <div class="form-check col-sm-2">
-                                    <input class="form-check-input" type="checkbox" name = "comments" id="flexCheckDefault"  >
-                                      <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" name = "comments" id="comments"  >
+                                      <label class="form-check-label" for="comments">
                                         Где есть комментарии
+                                      </label>
+                                    </div>
+                                    <div class="form-check col-sm-2">
+                                    <input class="form-check-input" type="checkbox" name = "VID" id="VID"  >
+                                      <label class="form-check-label" for="VID">
+                                        Которые лежат в офисе и нужно отвезти в поверку
                                       </label>
                                     </div>
                                     </div>

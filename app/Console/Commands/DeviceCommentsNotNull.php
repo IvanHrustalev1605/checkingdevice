@@ -57,7 +57,7 @@ class DeviceCommentsNotNull extends Command
         }
         If(isset($result)){
         Mail::to('ergogaz@gmail.com')->send(new MailDeviceWhereCommentsNotNull( $result));
-              return Log::info(1);
+              return Log::info();
          }
 }
 }

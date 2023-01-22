@@ -24,7 +24,7 @@ class OdersMailCron extends Mailable
     }
     public function build()
     {
-        return $this->from('example@example.com', 'Example')
+        return $this->from('example@example.com', 'Не оплаченне заказы')
                 ->view('mail.test.mail-cron-oders')
                 ->with([
                 'CurrentDate' => $this->oders
