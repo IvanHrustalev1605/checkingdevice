@@ -24,7 +24,7 @@ class MailDeviceWhereCommentsNotNull extends Mailable
     }
     public function build()
     {
-        return $this->from('example@example.com', 'Обратить внимание на комментарии этих приборов')
+        return $this->from('example@example.com', 'Обратить внимание!')
                 ->markdown('mail.test.mail-cron-device-whithComments')
                 ->with([
                 'DeviceAll' => $this->devices,
