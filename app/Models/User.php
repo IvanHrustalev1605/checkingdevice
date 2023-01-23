@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Emergency;
 
 class User extends Authenticatable
 {
@@ -49,6 +50,9 @@ class User extends Authenticatable
     ];
     public function organisation(){
         return $this->belongsTo(Organisation::class, 'orgid');
+    }
+    public function GetEmergency(){
+        return $this->hasOne(Emergency::class, 'eid');
     }
     public function oders(){
         return $this->hasMany(Oders::class, 'odid');

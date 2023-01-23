@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Http\Controllers\OderFilterController;
 use App\Models\Filters\Oders\OderSearch;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

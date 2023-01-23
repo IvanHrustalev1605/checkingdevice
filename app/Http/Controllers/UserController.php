@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Emergency;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
     public function index($id){
         $user = User::find($id);
-        return view('users.index', ['user' => $user]);
+        $emergencys = Emergency::where('uid', $id)->get();
+        return view('users.index', ['user' => $user, 'emergencys' => $emergencys]);
     }
     public function edit($id){
         $user = User::find($id);

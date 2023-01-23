@@ -158,7 +158,7 @@ function closeNav() {
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('userIndex', Auth::user()->uid)}}">
               <span data-feather="home"></span>
-               Личный кабинет сотрудника
+               Мой личный кабинет
             </a>
           </li>
           <li class="nav-item">

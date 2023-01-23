@@ -18,6 +18,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ObjectFilterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmergencyController;
 
 
 Route::group([
@@ -91,6 +92,11 @@ Route::group([
      Route::get('/oder/sortByObject', [OderFilterController::class, 'sort'])->name('OderSort');
 /*----------------------------------------all users--------------------------------------------*/
      Route::get('/allusers', [AllUsersController::class, 'index'])->name('AllUsersIndex');
+     /*----------------------------------------emergencies--------------------------------------------*/
+     Route::get('/user/{id}/emergency/create', [EmergencyController::class, 'create'])->name('emergencyCreate');
+     Route::POST('/user/{id}/emergency/create', [EmergencyController::class, 'store'])->name('emergencyAdd');
+     Route::get('/user/{id}/emergency/edit', [EmergencyController::class, 'edit'])->name('emergencyEdit');
+     Route::POST('/user/{id}/emergency/edit', [EmergencyController::class, 'update'])->name('emergencyUpdate');
 });
 
    

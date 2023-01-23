@@ -18,7 +18,7 @@
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="/public/storage/{!!$user->avatar!!}" alt="Admin" class="rounded-circle" width="200" height="190">
-                    <div class="mt-3">
+                            <div class="mt-3">
                       <h4>{{$user->name}} {{$user->surname}}</h4>
                       <p class="text-secondary mb-1">{{$user->post}}</p>
                     </div>
@@ -74,15 +74,67 @@
                     </div>
                   </div>
                   <hr>
+                  @if((Auth::user()->uid == $user->uid) || (Auth::user()->is_admin == 1))
                   <div class="row">
                     <div class="col-sm-12">
                       <a class="btn btn-info " href="{{route('userEdit', Auth::user()->uid)}}">Изменить</a>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
+            <div class="row gutters-sm">
+            <div class="row">
+                    <div class="col-sm-12">
+                      <a class="btn btn-info " href="{{route('emergencyCreate', Auth::user()->uid)}}">Добавить аварийный выезд</a>
+                    </div>
+                  </div>
+                  @endif
+                <div class="col-md-12 mb-3">
+                    <div class="card-body">
+                      <small>Аварийный выезды</small>
+                      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Дата</th>
+              <th scope="col">Объект</th>
+              <th scope="col">Время вызова</th>
+              <th scope="col">Время выезда</th>
+              <th scope="col">Время окончания работ</th>
+              <th scope="col">Время на объете</th>
+              <th scope="col">Оплата</th>
+              <th scope="col">Кто ездил</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($emergencys as $emergency)
+            <tr>
+           <td>{{$emergency->date}}</td>
+           <td>{{$emergency->GetObjects->ObjName}}</td>
+           <td>{{$emergency->time_call}}</td>
+           <td>{{$emergency->time_departure}}</td>
+           <td>{{$emergency->time_end}}</td>
+           <td>{{$emergency->DiffTime($emergency->time_end,$emergency->time_departure)}}</td>
+           <td>{{$emergency->sum}}</td>
+           <td>{{$user->name}}</td>
+           <td><a class="bi bi-pencil-fill" href="{{route('emergencyEdit', $emergency->eid)}}"></a></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+        @if(isset($emergency))
+        <div class="row justify-content-end">
+          <div class="col-3">
+          Итого:{{$emergency->FinalSum(Auth::user()->uid)}}
           </div>
         </div>
-    </div>
+        @endif
+      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
 @endsection
