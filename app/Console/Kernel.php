@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('orders:crone')->everyMinute();
          $schedule->command('device:crone')->everyMinute();
          $schedule->command('DeviceCommentsNotNull:crone')->everyMinute();
+         $schedule->command('OdersCronWhereNotOdered:crone')->everyMinute();
     }
 
     /**
