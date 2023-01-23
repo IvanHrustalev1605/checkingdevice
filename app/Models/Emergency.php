@@ -14,7 +14,7 @@ class Emergency extends Model
     protected $primaryKey = 'eid';
   
     public function GetObjects(){
-        return $this->hasOne(Objects::class, 'ObjID');
+        return $this->belongsTo(Objects::class, 'ObjID');
     }
     public function GetUser(){
         return $this->belongsTo(User::class, 'uid');

@@ -38,6 +38,9 @@ class Objects extends Model
     public function Oder(){
         return $this->hasOne(Oders::class, 'odid');
     }
+    public function GetEmergency(){
+        return $this->hasOne(Emergency::class, 'eid');
+    }
     public function ObjDoc(){
         return $this->hasMany(ObjDoc::class, 'ObjID');
     }
