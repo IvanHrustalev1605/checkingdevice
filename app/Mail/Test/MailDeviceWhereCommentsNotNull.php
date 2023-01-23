@@ -50,7 +50,7 @@ class MailDeviceWhereCommentsNotNull extends Mailable
     public function content()
     {
         return new Content(
-            view: 'mail.test.mail-cron',
+            view: 'mail.test.mail-cron-device-whithComments',
         );
     }
 
