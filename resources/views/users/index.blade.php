@@ -91,6 +91,7 @@
                     </div>
                   </div>
                   @endif
+                  @if((Auth::user()->uid == $user->uid) || (Auth::user()->is_admin == 1))
                 <div class="col-md-12 mb-3">
                     <div class="card-body">
                       <small>Аварийный выезды</small>
@@ -133,6 +134,7 @@
         </div>
         @endif
       </div>
+      @endif
                       </div>
                     </div>
                   </div>
