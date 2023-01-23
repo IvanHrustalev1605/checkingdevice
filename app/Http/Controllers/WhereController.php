@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Verifier;
 use App\Models\Where;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WhereController extends Controller
 {
@@ -20,6 +21,9 @@ class WhereController extends Controller
     public function update(Request $request, $id){
         $device = Where::find($id);
         $device->edit($request->all());
+        DB::table('priboris')
+              ->where('PriborID', $id)
+              ->update(['Vid' => $request->get('Vid')]);
         return redirect()->route('WhereIndex', ['id' => $id])->with('message', 'Изменения приняты!');
     }
 
