@@ -56,10 +56,11 @@ class EmergencyController extends Controller
             'time_end.required' => 'Укажите время окончания работ',
             'ObjID.required' => 'Укажите объект',
         ])->validate();
-        $emergency = Emergency::find($id);
+        $emergency = Emergency::find($id);  
         $emergency->edit($request->all());
         $sum =$emergency->SumPay($emergency->DiffTime($emergency-> time_departure,$emergency->time_end));
         $emergency-> sum = $sum;
+        $emergency->time_end = $request->get('time_end');
         $emergency->save();
         return redirect()->route('userIndex', Auth::user()->uid);
 }

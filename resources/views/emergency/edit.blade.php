@@ -6,8 +6,8 @@
     {{csrf_field()}}
     <div class="col-md-6">
   <label for="object" class="form-label">Выберите объект</label>
-<select id="object" name = "ObjID">
-<option  value="">Выберите...</option>
+<select id="object" name = "ObjID" >
+<option  value="{{$emergency->GetObjects->ObjID}}">{{$emergency->GetObjects->ObjName}}</option>
     @foreach ($objects as $obj)
   <option  value="{{$obj->ObjID}}">{{$obj->ObjName}}</option>
     @endforeach

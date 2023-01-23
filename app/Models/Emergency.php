@@ -47,7 +47,12 @@ class Emergency extends Model
         return $totalDuration;
     }
     public function SumPay($diff){
-        return 500 * $diff;
+        if ($diff < 1) {
+           $diff = 1;
+           return 500 * $diff;
+        }
+        else return 500 * $diff;
+        
     }
     public function FinalSum($id){
         $price = DB::table('emergencies')

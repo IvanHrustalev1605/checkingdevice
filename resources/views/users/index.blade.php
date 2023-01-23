@@ -117,7 +117,11 @@
            <td>{{$emergency->time_call}}</td>
            <td>{{$emergency->time_departure}}</td>
            <td>{{$emergency->time_end}}</td>
+           @if($emergency->DiffTime($emergency->time_end,$emergency->time_departure) == 0)
+            <td>Время на объекте меньше 1 часа, оплата только за выезд</td>
+           @else
            <td>{{$emergency->DiffTime($emergency->time_end,$emergency->time_departure)}}</td>
+           @endif          
            <td>{{$emergency->sum}}</td>
            <td>{{$user->name}}</td>
            @if((Auth::user()->uid == $user->uid) || (Auth::user()->is_admin == 1))
