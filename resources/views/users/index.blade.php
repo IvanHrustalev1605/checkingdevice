@@ -128,7 +128,7 @@
         @if(isset($emergency))
         <div class="row justify-content-end">
           <div class="col-3">
-          Итого:{{$emergency->FinalSum(Auth::user()->uid)}}
+          Итого:{{$emergency->FinalSum($user->uid)}}
           </div>
         </div>
         @endif
