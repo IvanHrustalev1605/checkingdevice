@@ -87,7 +87,7 @@
             <div class="row gutters-sm">
             <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " href="{{route('emergencyCreate', Auth::user()->uid)}}">Добавить аварийный выезд</a>
+                      <a class="btn btn-info " href="{{route('EmergencyCreate', Auth::user()->uid)}}">Добавить аварийный выезд</a>
                     </div>
                   </div>
                   @endif
@@ -119,7 +119,8 @@
            <td>{{$emergency->DiffTime($emergency->time_end,$emergency->time_departure)}}</td>
            <td>{{$emergency->sum}}</td>
            <td>{{$user->name}}</td>
-           <td><a class="bi bi-pencil-fill" href="{{route('emergencyEdit', $emergency->eid)}}"></a></td>
+           @if((Auth::user()->uid == $user->uid) || (Auth::user()->is_admin == 1))
+           <td><a class="bi bi-pencil-fill" href="{{route('EmergencyEdit', $emergency->eid)}}"></a></td>@endif
             </tr>
             @endforeach
           </tbody>

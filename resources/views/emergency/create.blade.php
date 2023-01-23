@@ -2,7 +2,7 @@
 @section('content')
 @include('errors.validErrors')
 <br>
-<form class="row g-3" action = "{{route('emergencyAdd', Auth::user()->uid)}}" method = "POST">
+<form class="row g-3" action = "{{route('EmergencyAdd', Auth::user()->uid)}}" method = "POST">
     {{csrf_field()}}
     <div class="col-md-6">
   <label for="object" class="form-label">Выберите объект</label>
@@ -20,15 +20,15 @@
     <input type="hidden" name="uid" value="{{Auth::user()->uid}}" class="form-control" id="uid">
   <div class="col-md-6">
     <label for="time_call" class="form-label">Время звонка или смс</label>
-    <input type="time" name="time_call" class="form-control" id="time_call">
+    <input type="time" name="time_call" class="form-control" id="time_call" value="{{old('time_call')}}>
   </div>
   <div class="col-md-6">
     <label for="time_departure" class="form-label">Время выезда</label>
-    <input type="time" name="time_departure" class="form-control" id="time_departure">
+    <input type="time" name="time_departure" class="form-control" id="time_departure" value="{{old('time_departure')}}>
   </div>
   <div class="col-md-6">
     <label for="time_end" class="form-label">Время окончания работ</label>
-    <input type="time" name="time_end" class="form-control" id="time_end">
+    <input type="time" name="time_end" class="form-control" id="time_end" value="{{old('time_end')}}>
   </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Добавить</button>

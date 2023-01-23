@@ -2,7 +2,7 @@
 @section('content')
 @include('errors.validErrors')
 <br>
-<form class="row g-3" action = "{{route('emergencyEdit', $emergency->eid)}}" method = "POST">
+<form class="row g-3" action = "{{route('EmergencyEdit', $emergency->eid)}}" method = "POST">
     {{csrf_field()}}
     <div class="col-md-6">
   <label for="object" class="form-label">Выберите объект</label>

@@ -93,10 +93,10 @@ Route::group([
 /*----------------------------------------all users--------------------------------------------*/
      Route::get('/allusers', [AllUsersController::class, 'index'])->name('AllUsersIndex');
      /*----------------------------------------emergencies--------------------------------------------*/
-     Route::get('/user/{id}/emergency/create', [EmergencyController::class, 'create'])->name('emergencyCreate');
-     Route::POST('/user/{id}/emergency/create', [EmergencyController::class, 'store'])->name('emergencyAdd');
-     Route::get('/user/{id}/emergency/edit', [EmergencyController::class, 'edit'])->name('emergencyEdit');
-     Route::POST('/user/{id}/emergency/edit', [EmergencyController::class, 'update'])->name('emergencyUpdate');
+     Route::get('/user/{id}/emergency/create', [EmergencyController::class, 'create'])->name('EmergencyCreate');
+     Route::POST('/user/{id}/emergency/create', [EmergencyController::class, 'store'])->name('EmergencyAdd');
+     Route::get('/user/{id}/emergency/edit', [EmergencyController::class, 'edit'])->name('EmergencyEdit');
+     Route::POST('/user/{id}/emergency/edit', [EmergencyController::class, 'update'])->name('EmergencyUpdate');
 });
 
    
