@@ -7,7 +7,7 @@
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+              <li class="breadcrumb-item active" aria-current="page">Привет {{$user->name}}, хорошего дня!</li>
             </ol>
           </nav>
           <!-- /Breadcrumb -->
