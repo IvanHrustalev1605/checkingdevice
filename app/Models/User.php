@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Emergency;
+use App\Models\Tasks;
 
 class User extends Authenticatable
 {
@@ -59,6 +60,9 @@ class User extends Authenticatable
     }
     public function device(){
         return $this->hasMany(Pribori::class, 'pid');
+    }
+    public function Tasks(){
+        return $this->hasOne(Tasks::class, 'tid');
     }
     public static function add($fields){
         $user = new static;

@@ -34,6 +34,7 @@
     <p class="h5 m-1">{{$object->phone}}</p>
     </div>
   </div>
+  <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
@@ -92,7 +93,60 @@
         </div>
       </div>
     </div>
+  
   </div>
+  <form method="get" action = "{{route('addTaskForm', $object->ObjID)}}">
+    <button type="submit" class="btn btn-primary px-4 m-4">Добавить задачу</button>
+  </form>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+      <h4>Задачи по объекту</h4>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        @foreach($tasks as $task)
+        @if($task->is_done == 1)
+        <div class="row bg-success bg-opacity-50">
+            <div class="col-3">
+            <p class="h5 m-1">{{$task->taskName}}</p>
+            </div>
+            <div class="col-3">
+            <p class="h5 m-1">Выполнено</p>
+            </div>
+            <div class="col-3">
+            <i class="bi bi-check-square h3"></i>
+            </div>
+            <div class="col-1">
+            <p class="h5 m-1">{{$task->user->name}}</p>
+            </div>
+        </div>
+      </div>
+      @else
+      <div class="row">
+            <div class="col-3">
+            <p class="h5 m-1">{{$task->taskName}}</p>
+            </div>
+            <div class="col-3">
+            <p class="h5 m-1">Не выполнено</p>
+            </div>
+            <div class="col-3">
+              <form method="get" action="{{route('changeStatus', $task->tid)}}">
+              <button class="btn btn-outline-info btn-sm">Выполнить 
+              <i class="bi bi-check-lg"></i></button>
+              </form>
+            </div>
+            <div class="col-1">
+            <p class="h5 m-1">{{$task->user->name}}</p>
+            </div>
+        </div>
+        @endif
+        @endforeach
+      </div>
+    </div>
+  </div>
+ </div>
 
 @include('errors.validErrors')
 <form method="post" action="{{route('addDoc', $object->ObjID)}}" enctype="multipart/form-data">
@@ -100,7 +154,7 @@
             <div class="col-sm-9 text-secondary m-4">
 				<input type="file" name="document" class="form-control">
 			</div>
-            <button type="submit" class="btn btn-primary px-4 m-4">Добавить</button>
+             
     </form>
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">

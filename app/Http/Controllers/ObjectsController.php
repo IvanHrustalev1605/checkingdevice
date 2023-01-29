@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ObjDoc;
 use App\Models\Objects;
+use App\Models\Tasks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +21,9 @@ class ObjectsController extends Controller
         $objDocs = DB::table('obj_docs')
                 ->where('ObjId', 'LIKE', $id)
                 ->get();
-        return view('objects.thisObject', ['object' => $object, 'documents' => $documents, 'objDocs' => $objDocs]);
+        $tasks = Tasks::where('ObjId', $id)
+                ->get();        
+        return view('objects.thisObject', ['object' => $object, 'documents' => $documents, 'objDocs' => $objDocs, 'tasks' => $tasks]);
     }
     public function editObject($id){
         $object = Objects::find($id);

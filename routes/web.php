@@ -19,7 +19,7 @@ use App\Http\Controllers\ObjectFilterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmergencyController;
-
+use App\Http\Controllers\TasksController;
 
 Route::group([
     'middleware' => 'guest'
@@ -49,7 +49,7 @@ Route::group([
  Route::get('/user/{id}', [UserController::class, 'index'])->name('userIndex');
  Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('userEdit');
  Route::POST('/user/edit/{id}', [UserController::class, 'update'])->name('userUpdate');
-
+/*----------------------------------------objects--------------------------------------------*/
     Route::get('/objects', [ObjectsController::class, 'index'])->name('ObjectsIndex');
     Route::get('/objects/thisObject/{id}', [ObjectsController::class, 'thisObject'])->name('thisObject');
     Route::post('/objects/thisObject/{id}/doc', [ObjectsController::class, 'documents'])->name('addDoc');
@@ -61,6 +61,9 @@ Route::group([
      Route::post('/objects/edit{ObjID}', [ObjectsController::class, 'update'])->name('UpdateObject');
      Route::delete('/objects{ObjID}', [ObjectsController::class, 'delete'])->name('objectDelete');
      Route::get('/objects/sortByObject', [ObjectFilterController::class, 'sort'])->name('ObjectSort');
+     Route::get('/objects/thisObject/{id}/tasks', [TasksController::class, 'create'])->name('addTaskForm');
+     Route::POST('/objects/thisObject/{id}/tasks', [TasksController::class, 'store'])->name('addTask');
+     Route::get('/objects/thisObject/tasks/changestatus{tid}', [TasksController::class, 'changeStatus'])->name('changeStatus');
 
      Route::get('/pribori', [PriboriController::class, 'index'])->name('PriboriIndex');
      Route::get('/create', [PriboriController::class, 'create'])->name('AddFormPribor');
