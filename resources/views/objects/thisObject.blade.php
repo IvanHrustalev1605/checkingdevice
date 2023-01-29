@@ -108,37 +108,37 @@
       <div class="accordion-body">
         @foreach($tasks as $task)
         @if($task->is_done == 1)
-        <div class="row bg-success bg-opacity-50">
-            <div class="col-3">
-            <p class="h5 m-1">{{$task->taskName}}</p>
+        <div class="row bg-success bg-opacity-50 text-wrap p-n4">
+            <div class="col-7 m-2 h6">
+            <p>{{$task->taskName}}</p>
             </div>
-            <div class="col-3">
-            <p class="h5 m-1">Выполнено</p>
+            <div class="col-1 m-2 h6">
+            <p>Выполнено</p>
             </div>
-            <div class="col-3">
+            <div class="col-1 m-2 h6">
             <i class="bi bi-check-square h3"></i>
             </div>
-            <div class="col-1">
-            <p class="h5 m-1">{{$task->user->name}}</p>
+            <div class="col-1 m-2 h6">
+            <p>{{$task->user->name}}</p>
             </div>
         </div>
       </div>
       @else
-      <div class="row">
-            <div class="col-3">
-            <p class="h5 m-1">{{$task->taskName}}</p>
+      <div class="row ">
+            <div class="col-7 h5 text-wrap">
+            <p>{{$task->taskName}}</p>
             </div>
-            <div class="col-3">
-            <p class="h5 m-1">Не выполнено</p>
+            <div class="col-1 m-2 h6">
+            <p>Не выполнено</p>
             </div>
-            <div class="col-3">
+            <div class="col-1 m-2 h6">
               <form method="get" action="{{route('changeStatus', $task->tid)}}">
               <button class="btn btn-outline-info btn-sm">Выполнить 
               <i class="bi bi-check-lg"></i></button>
               </form>
             </div>
-            <div class="col-1">
-            <p class="h5 m-1">{{$task->user->name}}</p>
+            <div class="col-1 m-2 h6">
+            <p>{{$task->user->name}}</p>
             </div>
         </div>
         @endif
